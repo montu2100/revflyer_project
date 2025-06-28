@@ -1,0 +1,12 @@
+# Dependencies (usually ignored anyway)
+node_modules/
+package-lock.json
+
+# Large assets
+*.svg
+public/tools_radar copy.svg
+
+# Build files
+dist/
+.vite/
+.cache/
