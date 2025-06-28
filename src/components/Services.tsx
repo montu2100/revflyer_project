@@ -103,7 +103,7 @@ const Services = () => {
                   <li className="flex items-start space-x-3">
                     <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Custom field configuration and workflow automation via Zapier
+                      Custom field configuration and workflow automation via Zapier, n8n or Make
                     </span>
                   </li>
                 </ul>
