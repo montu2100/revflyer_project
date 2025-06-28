@@ -34,18 +34,18 @@
 
 /* Override Mantine button colors to use new primary */
 .mantine-Button-root[data-variant="filled"] {
-  background-color: #1B4B3A !important;
-  border-color: #1B4B3A !important;
+  background-color: #063D3B !important;
+  border-color: #063D3B !important;
 }
 
 .mantine-Button-root[data-variant="filled"]:hover {
-  background-color: #1f5244 !important;
-  border-color: #1f5244 !important;
+  background-color: #0B4240 !important;
+  border-color: #0B4240 !important;
 }
 
 .mantine-Button-root[data-variant="filled"]:active {
-  background-color: #236553 !important;
-  border-color: #236553 !important;
+  background-color: #104745 !important;
+  border-color: #104745 !important;
 }
 
 /* Custom scrollbar using new colors */
@@ -63,14 +63,14 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1B4B3A;
+  background: #063D3B;
 }
 
 /* Focus styles for accessibility using primary color */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 2px solid #1B4B3A;
+  outline: 2px solid #063D3B;
   outline-offset: 2px;
 }
 

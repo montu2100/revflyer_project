@@ -15,7 +15,7 @@ export default {
           600: '#2a7d65',
           700: '#236553',
           800: '#1f5244',
-          900: '#1B4B3A', // Primary dark green
+          900: '#063D3B', // Updated primary dark green
         },
         secondary: {
           50: '#f6f9f8',
