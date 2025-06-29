@@ -1,9 +1,49 @@
 import React from 'react';
+import { Paper, Text, ThemeIcon } from '@mantine/core';
+import { IconTrendingUp, IconDatabase, IconCode } from '@tabler/icons-react';
 import AnimatedElement from './AnimatedElement';
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import classes from './CardGradient.module.css';
 
 const Services = () => {
   const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
+
+  const services = [
+    {
+      icon: IconTrendingUp,
+      title: 'Revenue Enablement',
+      gradient: { deg: 135, from: '#6B9B8A', to: '#86b5a6' },
+      cardClass: classes.revenueCard,
+      items: [
+        'Revenue forecasting, sales enablement and territory management',
+        'Pipeline management and lead qualification',
+        'Territory Transformation',
+        'Sales process optimization and territory management'
+      ]
+    },
+    {
+      icon: IconDatabase,
+      title: 'CRM Services',
+      gradient: { deg: 135, from: '#063D3B', to: '#2a7d65' },
+      cardClass: classes.crmCard,
+      items: [
+        'We implement clean set-up of Salesforce, HubSpot, Pipedrive and other CRMs',
+        'Data Migration',
+        'Custom field configuration and workflow automation via Zapier, n8n or Make'
+      ]
+    },
+    {
+      icon: IconCode,
+      title: 'Technical Services',
+      gradient: { deg: 135, from: '#F4C542', to: '#fbe083' },
+      cardClass: classes.technicalCard,
+      items: [
+        'API development, custom integration design, and technical consulting',
+        'Database Management',
+        'Advanced lead scoring, predictive modeling, and data-driven insights'
+      ]
+    }
+  ];
 
   return (
     <>
@@ -22,7 +62,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Mantine-Style Features Cards Section */}
+      {/* Mantine Service Cards Section */}
       <section id="services" className="py-20 md:py-24 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -40,145 +80,63 @@ const Services = () => {
             </AnimatedElement>
           </div>
 
-          {/* Mantine-Style Cards Grid */}
+          {/* Mantine Cards Grid */}
           <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10">
-            {/* Revenue Enablement Card */}
-            <div 
-              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary-200 overflow-hidden hover:scale-[1.02]"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
-                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms'
-              }}
-            >
-              {/* Card Header */}
-              <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
-                  Revenue Enablement
-                </h4>
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+                  transition: `opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 100}ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 100}ms`
+                }}
+              >
+                <Paper 
+                  withBorder 
+                  radius="md" 
+                  className={`${classes.card} ${service.cardClass}`}
+                  style={{
+                    '--primary-900': '#063D3B',
+                    '--primary-800': '#0B4240',
+                    '--primary-600': '#2a7d65',
+                    '--primary-500': '#389a7d',
+                    '--secondary-700': '#4a7366',
+                    '--secondary-600': '#5a8a78',
+                    '--secondary-500': '#6B9B8A',
+                    '--secondary-400': '#86b5a6',
+                    '--accent-700': '#bb8518',
+                    '--accent-600': '#e0a821',
+                    '--accent-500': '#F4C542',
+                    '--accent-400': '#f8d051'
+                  } as React.CSSProperties}
+                >
+                  <ThemeIcon
+                    size="xl"
+                    radius="md"
+                    variant="gradient"
+                    gradient={service.gradient}
+                    mb="md"
+                  >
+                    <service.icon size={28} stroke={1.5} />
+                  </ThemeIcon>
+                  
+                  <Text size="xl" fw={500} mt="md" mb="lg" style={{ color: '#2D2D2D' }}>
+                    {service.title}
+                  </Text>
+                  
+                  <div className="space-y-4">
+                    {service.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex items-start space-x-3">
+                        <div className="w-1.5 h-1.5 bg-charcoal-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
+                          {item}
+                        </Text>
+                      </div>
+                    ))}
+                  </div>
+                </Paper>
               </div>
-
-              {/* Card Content */}
-              <div className="px-8 md:px-10 pb-8 md:pb-10">
-                <ul className="space-y-5">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Revenue forecasting, sales enablement and territory management
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Pipeline management and lead qualification
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Territory Transformation
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Sales process optimization and territory management
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Subtle gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-secondary-50/0 group-hover:from-primary-50/20 group-hover:to-secondary-50/10 transition-all duration-300 pointer-events-none"></div>
-            </div>
-
-            {/* CRM Services Card */}
-            <div 
-              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-secondary-200 overflow-hidden hover:scale-[1.02]"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
-                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms'
-              }}
-            >
-              {/* Card Header */}
-              <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
-                  CRM Services
-                </h4>
-              </div>
-
-              {/* Card Content */}
-              <div className="px-8 md:px-10 pb-8 md:pb-10">
-                <ul className="space-y-5">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      We implement clean set-up of Salesforce, HubSpot, Pipedrive and other CRMs
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Data Migration
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Custom field configuration and workflow automation via Zapier, n8n or Make
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Subtle gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/0 to-primary-50/0 group-hover:from-secondary-50/20 group-hover:to-primary-50/10 transition-all duration-300 pointer-events-none"></div>
-            </div>
-
-            {/* Technical Services Card */}
-            <div 
-              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-accent-200 overflow-hidden hover:scale-[1.02]"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
-                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms'
-              }}
-            >
-              {/* Card Header */}
-              <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
-                  Technical Services
-                </h4>
-              </div>
-
-              {/* Card Content */}
-              <div className="px-8 md:px-10 pb-8 md:pb-10">
-                <ul className="space-y-5">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      API development, custom integration design, and technical consulting
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Database Management
-                    </span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-charcoal-600 text-sm md:text-base leading-relaxed">
-                      Advanced lead scoring, predictive modeling, and data-driven insights
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Subtle gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-50/0 to-secondary-50/0 group-hover:from-accent-50/20 group-hover:to-secondary-50/10 transition-all duration-300 pointer-events-none"></div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
