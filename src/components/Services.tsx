@@ -80,11 +80,12 @@ const Services = () => {
             </AnimatedElement>
           </div>
 
-          {/* Mantine Cards Grid */}
-          <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10">
+          {/* Mantine Cards Grid with Equal Heights */}
+          <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10 items-stretch">
             {services.map((service, index) => (
               <div
                 key={service.title}
+                className="flex"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
@@ -110,29 +111,33 @@ const Services = () => {
                     '--accent-400': '#f8d051'
                   } as React.CSSProperties}
                 >
-                  <ThemeIcon
-                    size="xl"
-                    radius="md"
-                    variant="gradient"
-                    gradient={service.gradient}
-                    mb="md"
-                  >
-                    <service.icon size={28} stroke={1.5} />
-                  </ThemeIcon>
-                  
-                  <Text size="xl" fw={500} mt="md" mb="lg" style={{ color: '#2D2D2D' }}>
-                    {service.title}
-                  </Text>
-                  
-                  <div className="space-y-4">
-                    {service.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-start space-x-3">
-                        <div className="w-1.5 h-1.5 bg-charcoal-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
-                          {item}
-                        </Text>
-                      </div>
-                    ))}
+                  <div className={classes.cardContent}>
+                    <div>
+                      <ThemeIcon
+                        size="xl"
+                        radius="md"
+                        variant="gradient"
+                        gradient={service.gradient}
+                        mb="md"
+                      >
+                        <service.icon size={28} stroke={1.5} />
+                      </ThemeIcon>
+                      
+                      <Text size="xl" fw={500} mt="md" mb="lg" style={{ color: '#2D2D2D' }}>
+                        {service.title}
+                      </Text>
+                    </div>
+                    
+                    <div className={`${classes.cardItems} space-y-4`}>
+                      {service.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="flex items-start space-x-3">
+                          <div className="w-1.5 h-1.5 bg-charcoal-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
+                            {item}
+                          </Text>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </Paper>
               </div>
