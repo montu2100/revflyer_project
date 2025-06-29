@@ -62,7 +62,7 @@ const CTA = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             {/* Rounded border container with 2px border and more rounded corners */}
-            <div className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-8 md:p-12 bg-white/50 backdrop-blur-sm">
+            <div className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-md p-8 md:p-12 bg-white/50 backdrop-blur-sm">
               <div className="space-y-6 md:space-y-8">
                 <p className="text-sm text-charcoal-400 uppercase tracking-wide">
                   Your flight to new revenue acceleration
