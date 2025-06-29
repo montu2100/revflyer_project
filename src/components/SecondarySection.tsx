@@ -10,10 +10,10 @@ const SecondarySection = () => {
             Expert in the systems you already use
           </h2>
           
-          {/* Systems Integration Radar - Clean implementation */}
+          {/* Systems Integration Radar - GitHub hosted */}
           <div className="flex justify-center">
             <img 
-              src="/tools_radar copy.svg" 
+              src="https://raw.githubusercontent.com/montu2100/revflyer_project/main/assets/tools_radar.svg" 
               alt="Integration Network - Connected ecosystem of your favorite tools"
               className="w-[26rem] h-[26rem] md:w-[31rem] md:h-[31rem] lg:w-[36rem] lg:h-[36rem] object-contain"
             />
