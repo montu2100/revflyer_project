@@ -57,12 +57,12 @@ const CTA = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="h-[50vh] md:h-[50vh] min-h-[40vh] bg-secondary-50 flex items-center py-12 md:py-16">
+      {/* Final CTA Section - Removed fixed height constraints */}
+      <section className="bg-secondary-50 flex items-center py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             {/* Rounded border container with 2px border and more rounded corners */}
-            <div className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-md p-8 md:p-12 bg-white/50 backdrop-blur-sm">
+            <div className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-8 md:p-12 bg-white/50 backdrop-blur-sm">
               <div className="space-y-6 md:space-y-8">
                 <p className="text-sm text-charcoal-400 uppercase tracking-wide">
                   Your flight to new revenue acceleration
