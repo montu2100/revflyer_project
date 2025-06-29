@@ -22,13 +22,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+            <a href="#about" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
               About
             </a>
-            <a href="#services" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+            <a href="#services" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
               Services
             </a>
-            <a href="#insights" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+            <a href="#insights" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
               Insights
             </a>
           </nav>
@@ -58,13 +58,13 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg">
             <div className="px-4 py-4 space-y-4">
-              <a href="#about" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+              <a href="#about" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
                 About
               </a>
-              <a href="#services" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+              <a href="#services" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
                 Services
               </a>
-              <a href="#insights" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+              <a href="#insights" className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm font-semibold">
                 Insights
               </a>
               <Button 
