@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center">
-              <img src="/logo_350px_100px.svg" alt="RevFlyer" className="h-12 w-auto" />
+              <img src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/logo_green_banner_300x100.svg" alt="RevFlyer" className="h-12 w-auto" />
             </div>
           </div>
 
