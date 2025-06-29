@@ -10,13 +10,29 @@ const SecondarySection = () => {
             Expert in the systems you already use
           </h2>
           
-          {/* Systems Integration Radar - GitHub hosted */}
+          {/* Systems Integration Radar - GitHub hosted with fallback */}
           <div className="flex justify-center">
-            <img 
-              src="https://raw.githubusercontent.com/montu2100/revflyer_project/main/assets/tools_radar.svg" 
-              alt="Integration Network - Connected ecosystem of your favorite tools"
-              className="w-[26rem] h-[26rem] md:w-[31rem] md:h-[31rem] lg:w-[36rem] lg:h-[36rem] object-contain"
-            />
+            <div className="w-[26rem] h-[26rem] md:w-[31rem] md:h-[31rem] lg:w-[36rem] lg:h-[36rem] relative">
+              <img 
+                src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/tools_radar.svg" 
+                alt="Integration Network - Connected ecosystem of your favorite tools"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div 
+                className="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-500 text-center p-8"
+                style={{display: 'none'}}
+              >
+                <div>
+                  <div className="text-lg font-medium mb-2">Integration Network</div>
+                  <div className="text-sm">Connected ecosystem of your favorite tools</div>
+                  <div className="text-xs mt-2 text-red-500">Image failed to load from GitHub</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
