@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="bg-primary-900 text-white min-h-[300px]">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Company Info */}
-          <div className="space-y-6">
+        <div className="grid grid-cols-5 gap-0">
+          {/* Company Info - 34% width (2 columns) with green background */}
+          <div className="col-span-2 bg-primary-900 pr-8 space-y-6">
             <div className="flex items-center">
               <img 
                 src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/logo_white_banner_300x100.svg" 
@@ -23,68 +23,71 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Expertise */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-medium text-white">Expertise</h4>
+          {/* Vertical Divider */}
+          <div className="w-px bg-primary-800 mx-4"></div>
+
+          {/* Expertise - 22% width (1 column) with white background */}
+          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
+            <h4 className="text-lg font-medium">Expertise</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Revenue Operations Strategy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Sales Process Optimization
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   CRM Implementation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Marketing Automation
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-medium text-white">Resources</h4>
+          {/* Resources - 22% width (1 column) with white background */}
+          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
+            <h4 className="text-lg font-medium">Resources</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   Insights
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
                   ROI Calculator
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-medium text-white">Contact</h4>
+          {/* Contact - 22% width (1 column) with white background */}
+          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
+            <h4 className="text-lg font-medium">Contact</h4>
             <div className="space-y-3">
-              <p className="text-secondary-200 text-sm">
+              <p className="text-charcoal-600 text-sm">
                 Ready to accelerate your revenue growth?
               </p>
-              <a href="mailto:hello@revflyer.com" className="text-white hover:text-accent-400 transition-colors text-sm">
+              <a href="mailto:hello@revflyer.com" className="text-primary-900 hover:text-primary-700 transition-colors text-sm">
                 hello@revflyer.com
               </a>
             </div>
