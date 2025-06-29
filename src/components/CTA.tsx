@@ -9,10 +9,10 @@ const CTA = () => {
   return (
     <>
       {/* Blog Preview Section (3 cards) */}
-      <section className="py-16 md:py-20 bg-secondary-50">
+      <section className="py-20 md:py-24 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Content Cards with 4:3 aspect ratio images */}
-          <div ref={containerRef} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
+          <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10 mb-20 md:mb-24 lg:mb-28">
             <div 
               className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full hover:shadow-md transition-all duration-300"
               style={{
@@ -22,11 +22,11 @@ const CTA = () => {
               }}
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-accent-300"></div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
-                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-4 flex-grow">
+                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
@@ -44,11 +44,11 @@ const CTA = () => {
               }}
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-secondary-200 to-secondary-300"></div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
-                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-4 flex-grow">
+                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
@@ -66,11 +66,11 @@ const CTA = () => {
               }}
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-primary-300"></div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
-                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-4 flex-grow">
+                <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
@@ -83,12 +83,12 @@ const CTA = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-secondary-50 flex items-center py-16 md:py-20 lg:py-24">
+      <section className="bg-secondary-50 flex items-center py-20 md:py-24 lg:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             {/* Rounded border container with 2px border and more rounded corners */}
-            <AnimatedElement className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-8 md:p-12 bg-white/50 backdrop-blur-sm">
-              <div className="space-y-6 md:space-y-8">
+            <AnimatedElement className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-10 md:p-12 lg:p-14 bg-white/50 backdrop-blur-sm">
+              <div className="space-y-8 md:space-y-10">
                 <AnimatedElement delay={100} as="p" className="text-sm text-charcoal-400 uppercase tracking-wide">
                   Your flight to new revenue acceleration
                 </AnimatedElement>
@@ -101,7 +101,7 @@ const CTA = () => {
                   Ready to accelerate your revenue growth? Let's discuss how RevFlyer can transform your operations.
                 </AnimatedElement>
                 
-                <AnimatedElement delay={400}>
+                <AnimatedElement delay={400} className="pt-2">
                   <Button 
                     size="lg"
                     variant="filled"

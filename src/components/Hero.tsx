@@ -5,11 +5,11 @@ import AnimatedElement from './AnimatedElement';
 const Hero = () => {
   return (
     <section className="bg-cream-50 h-screen min-h-[70vh] md:min-h-[80vh] lg:min-h-screen pt-20 flex items-center">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 w-full">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center h-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24 w-full">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center h-full">
           {/* Content - 60% width */}
-          <div className="lg:col-span-3 space-y-6 lg:space-y-8">
-            <div className="space-y-6">
+          <div className="lg:col-span-3 space-y-8 lg:space-y-10">
+            <div className="space-y-6 lg:space-y-8">
               <AnimatedElement delay={200} as="h1" className="text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal-900 leading-tight">
                 Accelerate Your Revenue Growth with RevFlyer.
               </AnimatedElement>
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <AnimatedElement delay={600} className="flex flex-col sm:flex-row gap-4">
+            <AnimatedElement delay={600} className="pt-2">
               <Button 
                 size="lg"
                 variant="filled"
@@ -31,7 +31,7 @@ const Hero = () => {
             </AnimatedElement>
 
             {/* Trust Indicator */}
-            <AnimatedElement delay={800} className="pt-4">
+            <AnimatedElement delay={800} className="pt-6">
               <p className="text-sm text-charcoal-400 leading-relaxed max-w-md">
                 Contact us to learn how RevFlyer can help your organization streamline and enhance operations. Our team will be in touch within 24 hours.
               </p>
@@ -41,7 +41,7 @@ const Hero = () => {
           {/* Visual Element - 40% width */}
           <div className="lg:col-span-2 relative">
             <AnimatedElement delay={400} animationType="scale-up" className="relative">
-              <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
+              <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
                 <div className="space-y-6">
                   {/* Simple geometric illustration placeholder */}
                   <div className="w-full h-48 md:h-64 lg:h-80 bg-gradient-to-br from-accent-200 via-secondary-200 to-secondary-300 rounded-lg flex items-center justify-center">

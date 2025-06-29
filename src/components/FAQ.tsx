@@ -32,11 +32,11 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-cream-50">
+    <section className="py-20 md:py-24 lg:py-28 bg-cream-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-6">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
             Frequently Asked Questions
           </AnimatedElement>
         </div>
@@ -60,20 +60,20 @@ const FAQ = () => {
                 border: 0,
                 backgroundColor: 'white',
                 borderRadius: '12px',
-                marginBottom: '12px',
+                marginBottom: '16px',
                 boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
                 '&[data-active]': {
                   boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
                 }
               },
               control: {
-                padding: '1.5rem',
+                padding: '1.75rem',
                 '&:hover': {
                   backgroundColor: 'rgb(249 250 251)'
                 }
               },
               content: {
-                padding: '0 1.5rem 1.5rem 1.5rem'
+                padding: '0 1.75rem 1.75rem 1.75rem'
               },
               panel: {
                 color: 'var(--charcoal-600)',
