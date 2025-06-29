@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center">
               <img 
-                src="/logo_350px_100px.svg" 
+                src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/logo_white_banner_300x100.svg" 
                 alt="RevFlyer" 
-                className="h-8 w-auto brightness-0 invert" 
+                className="h-8 w-auto" 
               />
             </div>
             <p className="text-secondary-200 leading-relaxed text-sm max-w-sm">
