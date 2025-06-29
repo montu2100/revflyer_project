@@ -26,70 +26,70 @@ const Footer = () => {
           {/* Vertical Divider */}
           <div className="w-px bg-primary-800 mx-4"></div>
 
-          {/* Expertise - 22% width (1 column) with white background */}
-          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
-            <h4 className="text-lg font-medium">Expertise</h4>
+          {/* Expertise - 22% width (1 column) */}
+          <div className="col-span-1 pl-4 space-y-6">
+            <h4 className="text-lg font-medium text-white">Expertise</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Revenue Operations Strategy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Sales Process Optimization
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   CRM Implementation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Marketing Automation
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Resources - 22% width (1 column) with white background */}
-          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
-            <h4 className="text-lg font-medium">Resources</h4>
+          {/* Resources - 22% width (1 column) */}
+          <div className="col-span-1 pl-4 space-y-6">
+            <h4 className="text-lg font-medium text-white">Resources</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   Insights
                 </a>
               </li>
               <li>
-                <a href="#" className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm">
+                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
                   ROI Calculator
                 </a>
               </li>
             </ul>
-          </div>
 
-          {/* Contact - 22% width (1 column) with white background */}
-          <div className="col-span-1 bg-white text-charcoal-900 p-6 space-y-6">
-            <h4 className="text-lg font-medium">Contact</h4>
-            <div className="space-y-3">
-              <p className="text-charcoal-600 text-sm">
-                Ready to accelerate your revenue growth?
-              </p>
-              <a href="mailto:hello@revflyer.com" className="text-primary-900 hover:text-primary-700 transition-colors text-sm">
-                hello@revflyer.com
-              </a>
+            {/* Contact section moved below Resources */}
+            <div className="pt-8 space-y-6">
+              <h4 className="text-lg font-medium text-white">Contact</h4>
+              <div className="space-y-3">
+                <p className="text-secondary-200 text-sm">
+                  Ready to accelerate your revenue growth?
+                </p>
+                <a href="mailto:hello@revflyer.com" className="text-white hover:text-accent-400 transition-colors text-sm">
+                  hello@revflyer.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
