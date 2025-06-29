@@ -1,6 +1,7 @@
 import React from 'react';
 import { Accordion } from '@mantine/core';
 import { Plus } from 'lucide-react';
+import AnimatedElement from './AnimatedElement';
 
 const FAQ = () => {
   const faqs = [
@@ -35,86 +36,88 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-6">
+          <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-6">
             Frequently Asked Questions
-          </h2>
+          </AnimatedElement>
         </div>
 
         {/* Mantine-Style FAQ Accordion */}
-        <Accordion
-          chevronPosition="right"
-          defaultValue="revops-definition"
-          chevronSize={26}
-          variant="separated"
-          disableChevronRotation
-          styles={{
-            label: { 
-              color: 'var(--charcoal-900)',
-              fontSize: '1.125rem',
-              fontWeight: 500,
-              lineHeight: 1.5
-            },
-            item: { 
-              border: 0,
-              backgroundColor: 'white',
-              borderRadius: '12px',
-              marginBottom: '12px',
-              boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-              '&[data-active]': {
-                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+        <AnimatedElement delay={200}>
+          <Accordion
+            chevronPosition="right"
+            defaultValue="revops-definition"
+            chevronSize={26}
+            variant="separated"
+            disableChevronRotation
+            styles={{
+              label: { 
+                color: 'var(--charcoal-900)',
+                fontSize: '1.125rem',
+                fontWeight: 500,
+                lineHeight: 1.5
+              },
+              item: { 
+                border: 0,
+                backgroundColor: 'white',
+                borderRadius: '12px',
+                marginBottom: '12px',
+                boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+                '&[data-active]': {
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
+                }
+              },
+              control: {
+                padding: '1.5rem',
+                '&:hover': {
+                  backgroundColor: 'rgb(249 250 251)'
+                }
+              },
+              content: {
+                padding: '0 1.5rem 1.5rem 1.5rem'
+              },
+              panel: {
+                color: 'var(--charcoal-600)',
+                fontSize: '1rem',
+                lineHeight: 1.6
               }
-            },
-            control: {
-              padding: '1.5rem',
-              '&:hover': {
-                backgroundColor: 'rgb(249 250 251)'
-              }
-            },
-            content: {
-              padding: '0 1.5rem 1.5rem 1.5rem'
-            },
-            panel: {
-              color: 'var(--charcoal-600)',
-              fontSize: '1rem',
-              lineHeight: 1.6
+            }}
+            chevron={
+              <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
+                <Plus size={16} className="text-white" strokeWidth={2} />
+              </div>
             }
-          }}
-          chevron={
-            <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-              <Plus size={16} className="text-white" strokeWidth={2} />
-            </div>
-          }
-        >
-          <Accordion.Item value="revops-definition">
-            <Accordion.Control>{faqs[0].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[0].answer}</Accordion.Panel>
-          </Accordion.Item>
+          >
+            <Accordion.Item value="revops-definition">
+              <Accordion.Control>{faqs[0].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[0].answer}</Accordion.Panel>
+            </Accordion.Item>
 
-          <Accordion.Item value="company-size">
-            <Accordion.Control>{faqs[1].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[1].answer}</Accordion.Panel>
-          </Accordion.Item>
+            <Accordion.Item value="company-size">
+              <Accordion.Control>{faqs[1].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[1].answer}</Accordion.Panel>
+            </Accordion.Item>
 
-          <Accordion.Item value="implementation-timeline">
-            <Accordion.Control>{faqs[2].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[2].answer}</Accordion.Panel>
-          </Accordion.Item>
+            <Accordion.Item value="implementation-timeline">
+              <Accordion.Control>{faqs[2].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[2].answer}</Accordion.Panel>
+            </Accordion.Item>
 
-          <Accordion.Item value="tech-stack">
-            <Accordion.Control>{faqs[3].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[3].answer}</Accordion.Panel>
-          </Accordion.Item>
+            <Accordion.Item value="tech-stack">
+              <Accordion.Control>{faqs[3].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[3].answer}</Accordion.Panel>
+            </Accordion.Item>
 
-          <Accordion.Item value="differentiator">
-            <Accordion.Control>{faqs[4].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[4].answer}</Accordion.Panel>
-          </Accordion.Item>
+            <Accordion.Item value="differentiator">
+              <Accordion.Control>{faqs[4].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[4].answer}</Accordion.Panel>
+            </Accordion.Item>
 
-          <Accordion.Item value="pricing">
-            <Accordion.Control>{faqs[5].question}</Accordion.Control>
-            <Accordion.Panel>{faqs[5].answer}</Accordion.Panel>
-          </Accordion.Item>
-        </Accordion>
+            <Accordion.Item value="pricing">
+              <Accordion.Control>{faqs[5].question}</Accordion.Control>
+              <Accordion.Panel>{faqs[5].answer}</Accordion.Panel>
+            </Accordion.Item>
+          </Accordion>
+        </AnimatedElement>
       </div>
     </section>
   );

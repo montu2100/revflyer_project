@@ -1,15 +1,26 @@
 import React from 'react';
 import { Button } from '@mantine/core';
+import AnimatedElement from './AnimatedElement';
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const CTA = () => {
+  const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
+
   return (
     <>
       {/* Blog Preview Section (3 cards) */}
       <section className="py-16 md:py-20 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Content Cards with 4:3 aspect ratio images */}
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full">
+          <div ref={containerRef} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20">
+            <div 
+              className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full hover:shadow-md transition-all duration-300"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms'
+              }}
+            >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-accent-300"></div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
@@ -24,7 +35,14 @@ const CTA = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full">
+            <div 
+              className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full hover:shadow-md transition-all duration-300"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms'
+              }}
+            >
               <div className="aspect-[4/3] bg-gradient-to-br from-secondary-200 to-secondary-300"></div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
@@ -39,7 +57,14 @@ const CTA = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full">
+            <div 
+              className="bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full hover:shadow-md transition-all duration-300"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms'
+              }}
+            >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-primary-300"></div>
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-3">
@@ -57,31 +82,36 @@ const CTA = () => {
         </div>
       </section>
 
-      {/* Final CTA Section - Removed fixed height constraints */}
+      {/* Final CTA Section */}
       <section className="bg-secondary-50 flex items-center py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
             {/* Rounded border container with 2px border and more rounded corners */}
-            <div className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-8 md:p-12 bg-white/50 backdrop-blur-sm">
+            <AnimatedElement className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-8 md:p-12 bg-white/50 backdrop-blur-sm">
               <div className="space-y-6 md:space-y-8">
-                <p className="text-sm text-charcoal-400 uppercase tracking-wide">
+                <AnimatedElement delay={100} as="p" className="text-sm text-charcoal-400 uppercase tracking-wide">
                   Your flight to new revenue acceleration
-                </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
+                </AnimatedElement>
+                
+                <AnimatedElement delay={200} as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
                   Let's talk RevOps!
-                </h2>
-                <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl mx-auto">
+                </AnimatedElement>
+                
+                <AnimatedElement delay={300} as="p" className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl mx-auto">
                   Ready to accelerate your revenue growth? Let's discuss how RevFlyer can transform your operations.
-                </p>
-                <Button 
-                  size="lg"
-                  variant="filled"
-                  className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base md:text-lg"
-                >
-                  Talk To An Expert
-                </Button>
+                </AnimatedElement>
+                
+                <AnimatedElement delay={400}>
+                  <Button 
+                    size="lg"
+                    variant="filled"
+                    className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base md:text-lg"
+                  >
+                    Talk To An Expert
+                  </Button>
+                </AnimatedElement>
               </div>
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </section>

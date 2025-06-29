@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@mantine/core';
+import AnimatedElement from './AnimatedElement';
 
 const Hero = () => {
   return (
@@ -9,16 +10,17 @@ const Hero = () => {
           {/* Content - 60% width */}
           <div className="lg:col-span-3 space-y-6 lg:space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal-900 leading-tight">
+              <AnimatedElement delay={200} as="h1" className="text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal-900 leading-tight">
                 Accelerate Your Revenue Growth with RevFlyer.
-              </h1>
-              <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl">
+              </AnimatedElement>
+              
+              <AnimatedElement delay={400} as="p" className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl">
                 Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
-              </p>
+              </AnimatedElement>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <AnimatedElement delay={600} className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg"
                 variant="filled"
@@ -26,19 +28,19 @@ const Hero = () => {
               >
                 Get a consultation - it's free
               </Button>
-            </div>
+            </AnimatedElement>
 
             {/* Trust Indicator */}
-            <div className="pt-4">
+            <AnimatedElement delay={800} className="pt-4">
               <p className="text-sm text-charcoal-400 leading-relaxed max-w-md">
                 Contact us to learn how RevFlyer can help your organization streamline and enhance operations. Our team will be in touch within 24 hours.
               </p>
-            </div>
+            </AnimatedElement>
           </div>
 
           {/* Visual Element - 40% width */}
           <div className="lg:col-span-2 relative">
-            <div className="relative">
+            <AnimatedElement delay={400} animationType="scale-up" className="relative">
               <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
                 <div className="space-y-6">
                   {/* Simple geometric illustration placeholder */}
@@ -47,7 +49,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </div>

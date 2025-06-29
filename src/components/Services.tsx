@@ -1,18 +1,23 @@
 import React from 'react';
+import AnimatedElement from './AnimatedElement';
+import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const Services = () => {
+  const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
+
   return (
     <>
       {/* Services Introduction Section */}
       <section className="min-h-[60vh] flex items-center bg-secondary-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 max-w-3xl mx-auto leading-tight">
+            <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 max-w-3xl mx-auto leading-tight">
               Outsource RevOps complexity to power your revenue engine
-            </h2>
-            <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-3xl mx-auto">
+            </AnimatedElement>
+            
+            <AnimatedElement delay={200} as="p" className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-3xl mx-auto">
               RevFlyer's comprehensive revenue operations platform gives you the competitive advantage you need. Through expert process design, workflow automation, and optimization, RevFlyer can streamline your revenue operations.
-            </p>
+            </AnimatedElement>
           </div>
         </div>
       </section>
@@ -22,19 +27,30 @@ const Services = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 md:mb-20">
-            <p className="text-sm text-charcoal-400 mb-4 uppercase tracking-wide">REVFLYER PARTNERSHIPS</p>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-6">
+            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-4 uppercase tracking-wide">
+              REVFLYER PARTNERSHIPS
+            </AnimatedElement>
+            
+            <AnimatedElement delay={100} as="h3" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-6">
               All the expertise you need in one RevFlyer partnership.
-            </h3>
-            <p className="text-charcoal-600 max-w-2xl mx-auto text-lg">
+            </AnimatedElement>
+            
+            <AnimatedElement delay={200} as="p" className="text-charcoal-600 max-w-2xl mx-auto text-lg">
               Every RevFlyer partnership is tailored to your needs to ensure you and your team get all the extra mile.
-            </p>
+            </AnimatedElement>
           </div>
 
           {/* Mantine-Style Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div ref={containerRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Revenue Enablement Card */}
-            <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary-200 overflow-hidden">
+            <div 
+              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary-200 overflow-hidden hover:scale-[1.02]"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 0ms'
+              }}
+            >
               {/* Card Header */}
               <div className="p-6 md:p-8 pb-4">
                 <h4 className="text-xl md:text-2xl font-medium text-charcoal-900 mb-4">
@@ -77,7 +93,14 @@ const Services = () => {
             </div>
 
             {/* CRM Services Card */}
-            <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-secondary-200 overflow-hidden">
+            <div 
+              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-secondary-200 overflow-hidden hover:scale-[1.02]"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 100ms'
+              }}
+            >
               {/* Card Header */}
               <div className="p-6 md:p-8 pb-4">
                 <h4 className="text-xl md:text-2xl font-medium text-charcoal-900 mb-4">
@@ -114,7 +137,14 @@ const Services = () => {
             </div>
 
             {/* Technical Services Card */}
-            <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-accent-200 overflow-hidden">
+            <div 
+              className="group relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-accent-200 overflow-hidden hover:scale-[1.02]"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+                transition: 'opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) 200ms'
+              }}
+            >
               {/* Card Header */}
               <div className="p-6 md:p-8 pb-4">
                 <h4 className="text-xl md:text-2xl font-medium text-charcoal-900 mb-4">

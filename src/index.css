@@ -74,9 +74,41 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-/* Smooth transitions */
+/* Smooth transitions for all elements */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Animation performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure smooth animations on supported devices */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    will-change: transform, opacity;
+  }
+  
+  .animate-on-scroll.animated {
+    will-change: auto;
+  }
+}
+
+/* Performance optimization for mobile devices */
+@media (max-width: 768px) {
+  * {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
 }

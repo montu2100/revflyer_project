@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedElement from './AnimatedElement';
 
 const SecondarySection = () => {
   return (
@@ -6,13 +7,18 @@ const SecondarySection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Systems Integration Section */}
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-12 md:mb-16">
+          <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-12 md:mb-16">
             Expert in the systems you already use
-          </h2>
+          </AnimatedElement>
           
           {/* Systems Integration Radar - GitHub hosted with fallback */}
           <div className="flex justify-center">
-            <div className="w-[26rem] h-[26rem] md:w-[31rem] md:h-[31rem] lg:w-[36rem] lg:h-[36rem] relative">
+            <AnimatedElement 
+              delay={200} 
+              duration={800} 
+              animationType="scale-up"
+              className="w-[26rem] h-[26rem] md:w-[31rem] md:h-[31rem] lg:w-[36rem] lg:h-[36rem] relative"
+            >
               <img 
                 src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/tools_radar.svg" 
                 alt="Integration Network - Connected ecosystem of your favorite tools"
@@ -32,7 +38,7 @@ const SecondarySection = () => {
                   <div className="text-xs mt-2 text-red-500">Image failed to load from GitHub</div>
                 </div>
               </div>
-            </div>
+            </AnimatedElement>
           </div>
         </div>
       </div>
