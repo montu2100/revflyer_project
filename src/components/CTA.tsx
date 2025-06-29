@@ -61,23 +61,26 @@ const CTA = () => {
       <section className="h-[50vh] md:h-[50vh] min-h-[40vh] bg-secondary-50 flex items-center py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
-              <p className="text-sm text-charcoal-400 uppercase tracking-wide">
-                Your flight to new revenue acceleration
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
-                Let's talk RevOps!
-              </h2>
-              <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl mx-auto">
-                Ready to accelerate your revenue growth? Let's discuss how RevFlyer can transform your operations.
-              </p>
-              <Button 
-                size="lg"
-                variant="filled"
-                className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base md:text-lg"
-              >
-                Talk To An Expert
-              </Button>
+            {/* Rounded border container with medium padding */}
+            <div className="max-w-3xl mx-auto border border-charcoal-200 rounded-sm p-8 md:p-12 bg-white/50 backdrop-blur-sm">
+              <div className="space-y-6 md:space-y-8">
+                <p className="text-sm text-charcoal-400 uppercase tracking-wide">
+                  Your flight to new revenue acceleration
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
+                  Let's talk RevOps!
+                </h2>
+                <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl mx-auto">
+                  Ready to accelerate your revenue growth? Let's discuss how RevFlyer can transform your operations.
+                </p>
+                <Button 
+                  size="lg"
+                  variant="filled"
+                  className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base md:text-lg"
+                >
+                  Talk To An Expert
+                </Button>
+              </div>
             </div>
           </div>
         </div>
