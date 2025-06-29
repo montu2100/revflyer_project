@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-primary-900 text-white min-h-[300px]">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-5 gap-0">
+        <div className="grid grid-cols-6 gap-0">
           {/* Company Info - 34% width (2 columns) with green background */}
           <div className="col-span-2 bg-primary-900 pr-8 space-y-6">
             <div className="flex items-center">
@@ -24,63 +24,66 @@ const Footer = () => {
           </div>
 
           {/* Vertical Divider */}
-          <div className="w-px bg-primary-800 mx-4"></div>
+          <div className="w-px bg-primary-800 mx-6"></div>
 
-          {/* Expertise - 22% width (1 column) */}
-          <div className="col-span-1 pl-4 space-y-6">
-            <h4 className="text-lg font-medium text-white">Expertise</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Revenue Operations Strategy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Sales Process Optimization
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  CRM Implementation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Marketing Automation
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Right side three-column layout - 22% each */}
+          <div className="col-span-3 grid grid-cols-3 gap-8">
+            {/* Expertise - First column */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-medium text-white">Expertise</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Revenue Operations Strategy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Sales Process Optimization
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    CRM Implementation
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Marketing Automation
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-          {/* Resources - 22% width (1 column) */}
-          <div className="col-span-1 pl-4 space-y-6">
-            <h4 className="text-lg font-medium text-white">Resources</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  Insights
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
-                  ROI Calculator
-                </a>
-              </li>
-            </ul>
+            {/* Resources - Second column */}
+            <div className="space-y-6">
+              <h4 className="text-lg font-medium text-white">Resources</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Case Studies
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    Insights
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary-200 hover:text-white transition-colors duration-200 text-sm">
+                    ROI Calculator
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            {/* Contact section moved below Resources */}
-            <div className="pt-8 space-y-6">
+            {/* Contact - Third column (rightmost) */}
+            <div className="space-y-6">
               <h4 className="text-lg font-medium text-white">Contact</h4>
               <div className="space-y-3">
                 <p className="text-secondary-200 text-sm">
