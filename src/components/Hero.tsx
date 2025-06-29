@@ -9,7 +9,7 @@ const Hero = () => {
           {/* Content - 60% width */}
           <div className="lg:col-span-3 space-y-6 lg:space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-charcoal-900 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 leading-tight">
                 Accelerate Your Revenue Growth with RevFlyer.
               </h1>
               

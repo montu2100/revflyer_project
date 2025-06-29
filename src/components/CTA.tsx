@@ -23,7 +23,7 @@ const CTA = () => {
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-accent-300"></div>
               <div className="p-8 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
+                <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
@@ -45,7 +45,7 @@ const CTA = () => {
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-secondary-200 to-secondary-300"></div>
               <div className="p-8 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
+                <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
@@ -67,7 +67,7 @@ const CTA = () => {
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-primary-300"></div>
               <div className="p-8 flex-grow flex flex-col">
-                <h3 className="text-lg md:text-xl font-medium text-charcoal-900 mb-4">
+                <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
                   Interesting title for this content
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
@@ -93,7 +93,7 @@ const CTA = () => {
                   Your flight to new revenue acceleration
                 </AnimatedElement>
                 
-                <AnimatedElement delay={200} as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900">
+                <AnimatedElement delay={200} as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900">
                   Let's talk RevOps!
                 </AnimatedElement>
                 

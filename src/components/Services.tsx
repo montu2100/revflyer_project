@@ -11,7 +11,7 @@ const Services = () => {
       <section className="min-h-[60vh] flex items-center bg-secondary-50 py-20 md:py-24 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8 lg:space-y-10">
-            <AnimatedElement as="h2" className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 max-w-3xl mx-auto leading-tight">
+            <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 max-w-3xl mx-auto leading-tight">
               Outsource RevOps complexity to power your revenue engine
             </AnimatedElement>
             
@@ -31,7 +31,7 @@ const Services = () => {
               REVFLYER PARTNERSHIPS
             </AnimatedElement>
             
-            <AnimatedElement delay={100} as="h3" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-8 lg:mb-10">
+            <AnimatedElement delay={100} as="h3" className="text-xl md:text-2xl lg:text-3xl font-normal text-charcoal-900 mb-8 lg:mb-10">
               All the expertise you need in one RevFlyer partnership.
             </AnimatedElement>
             
@@ -53,7 +53,7 @@ const Services = () => {
             >
               {/* Card Header */}
               <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-xl md:text-2xl font-medium text-charcoal-900">
+                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
                   Revenue Enablement
                 </h4>
               </div>
@@ -103,7 +103,7 @@ const Services = () => {
             >
               {/* Card Header */}
               <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-xl md:text-2xl font-medium text-charcoal-900">
+                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
                   CRM Services
                 </h4>
               </div>
@@ -147,7 +147,7 @@ const Services = () => {
             >
               {/* Card Header */}
               <div className="p-8 md:p-10 pb-6">
-                <h4 className="text-xl md:text-2xl font-medium text-charcoal-900">
+                <h4 className="text-lg md:text-xl font-medium text-charcoal-900">
                   Technical Services
                 </h4>
               </div>
