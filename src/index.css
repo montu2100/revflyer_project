@@ -32,10 +32,11 @@
   }
 }
 
-/* Override Mantine button colors to use new primary */
+/* Override Mantine button colors and font weight */
 .mantine-Button-root[data-variant="filled"] {
   background-color: #063D3B !important;
   border-color: #063D3B !important;
+  font-weight: 400 !important; /* Regular font weight */
 }
 
 .mantine-Button-root[data-variant="filled"]:hover {
