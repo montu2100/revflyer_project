@@ -105,8 +105,8 @@ const Services = () => {
 
                   {/* What's Included Section */}
                   <div className="flex-grow">
-                    <h4 className="text-sm font-medium text-charcoal-900 tracking-wide mb-6">
-                      <span className="uppercase font-medium text-base">What's Included</span>
+                    <h4 className="text-xs font-medium text-charcoal-900 tracking-wide mb-6">
+                      <span className="uppercase font-medium">What's Included</span>
                     </h4>
                     
                     <div className="space-y-4">
