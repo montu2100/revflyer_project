@@ -8,9 +8,24 @@ const CTA = () => {
 
   return (
     <>
-      {/* Blog Preview Section (3 cards) */}
-      <section className="py-20 md:py-24 lg:py-28 bg-secondary-50">
+      {/* Blog Preview Section (3 cards) - Insights Section */}
+      <section id="insights" className="py-20 md:py-24 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-20 lg:mb-24">
+            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-6 uppercase tracking-wide">
+              LATEST INSIGHTS
+            </AnimatedElement>
+            
+            <AnimatedElement delay={100} as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-8 lg:mb-10">
+              Revenue Operations Insights
+            </AnimatedElement>
+            
+            <AnimatedElement delay={200} as="p" className="text-charcoal-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Stay ahead with the latest trends, strategies, and best practices in revenue operations.
+            </AnimatedElement>
+          </div>
+
           {/* Content Cards with 4:3 aspect ratio images */}
           <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10 mb-20 md:mb-24 lg:mb-28">
             <div 
@@ -24,10 +39,10 @@ const CTA = () => {
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-accent-300"></div>
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
-                  Interesting title for this content
+                  Optimizing Your Sales Funnel for Maximum Revenue
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Learn how to identify bottlenecks in your sales process and implement data-driven strategies to accelerate revenue growth.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
                   Read more →
@@ -46,10 +61,10 @@ const CTA = () => {
               <div className="aspect-[4/3] bg-gradient-to-br from-secondary-200 to-secondary-300"></div>
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
-                  Interesting title for this content
+                  The Complete Guide to CRM Implementation
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Step-by-step strategies for successful CRM deployment, data migration, and team adoption to maximize your investment.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
                   Read more →
@@ -68,10 +83,10 @@ const CTA = () => {
               <div className="aspect-[4/3] bg-gradient-to-br from-accent-200 to-primary-300"></div>
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-base md:text-lg font-medium text-charcoal-900 mb-4">
-                  Interesting title for this content
+                  Building a Data-Driven Revenue Operations Team
                 </h3>
                 <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Essential frameworks and tools for creating a high-performing RevOps team that drives predictable revenue growth.
                 </p>
                 <a href="#" className="text-primary-900 text-sm md:text-base hover:underline transition-colors">
                   Read more →

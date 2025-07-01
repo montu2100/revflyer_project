@@ -3,7 +3,7 @@ import AnimatedElement from './AnimatedElement';
 
 const SecondarySection = () => {
   return (
-    <section className="h-auto min-h-[80vh] bg-white flex items-center py-24 md:py-28 lg:py-32">
+    <section id="about" className="h-auto min-h-[80vh] bg-white flex items-center py-24 md:py-28 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Systems Integration Section */}
         <div className="text-center">
