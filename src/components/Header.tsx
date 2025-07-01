@@ -108,7 +108,7 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <Button 
               variant="filled" 
-              className="bg-primary-900 hover:bg-primary-800 text-white text-sm px-6 py-2 rounded-md transition-all duration-200"
+              className="bg-primary-900 hover:bg-primary-800 text-white text-xs px-6 py-2 rounded-md transition-all duration-200"
               data-cal-link="revflyer/discovery-call"
               data-cal-namespace="discovery-call"
               data-cal-config='{"layout":"month_view"}'
