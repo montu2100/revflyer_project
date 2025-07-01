@@ -79,9 +79,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Work Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+        sans: ['"Work Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
         serif: ['Adamina', 'serif'],
         heading: ['Adamina', 'serif'],
+        'work-sans': ['"Work Sans"', 'sans-serif'],
       },
       fontWeight: {
         light: '300',
