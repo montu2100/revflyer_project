@@ -13,7 +13,7 @@ const Hero = () => {
                 Accelerate Your Revenue Growth with RevFlyer.
               </h1>
               
-              <p className="text-lg md:text-xl text-charcoal-600 leading-relaxed max-w-2xl">
+              <p className="text-xl md:text-2xl text-charcoal-600 leading-relaxed max-w-2xl">
                 Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
               </p>
             </div>
