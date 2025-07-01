@@ -67,8 +67,8 @@ const Services = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-6 uppercase tracking-wide">
-              REVFLYER PARTNERSHIPS
+            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-6 uppercase tracking-wide font-medium">
+              RevFlyer Partnerships
             </AnimatedElement>
             
             <AnimatedElement delay={100} as="h3" className="text-xl md:text-2xl lg:text-3xl font-normal text-charcoal-900 mb-8 lg:mb-10">
@@ -105,8 +105,8 @@ const Services = () => {
 
                   {/* What's Included Section */}
                   <div className="flex-grow">
-                    <h4 className="text-sm font-medium text-charcoal-900 uppercase tracking-wide mb-6">
-                      What's Included
+                    <h4 className="text-sm font-medium text-charcoal-900 tracking-wide mb-6">
+                      <span className="uppercase font-medium text-base">What's Included</span>
                     </h4>
                     
                     <div className="space-y-4">

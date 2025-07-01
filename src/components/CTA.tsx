@@ -13,8 +13,8 @@ const CTA = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
-            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-6 uppercase tracking-wide">
-              LATEST INSIGHTS
+            <AnimatedElement as="p" className="text-sm text-charcoal-400 mb-6 tracking-wide font-medium">
+              <span className="uppercase font-medium text-base">Latest Insights</span>
             </AnimatedElement>
             
             <AnimatedElement delay={100} as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-8 lg:mb-10">
@@ -104,7 +104,7 @@ const CTA = () => {
             {/* Rounded border container with 2px border and more rounded corners */}
             <AnimatedElement className="max-w-3xl mx-auto border-2 border-charcoal-200 rounded-xl p-10 md:p-12 lg:p-14 bg-white/50 backdrop-blur-sm">
               <div className="space-y-8 md:space-y-10">
-                <AnimatedElement delay={100} as="p" className="text-sm text-charcoal-400 uppercase tracking-wide">
+                <AnimatedElement delay={100} as="p" className="text-sm text-charcoal-400 tracking-wide">
                   Your flight to new revenue acceleration
                 </AnimatedElement>
                 
