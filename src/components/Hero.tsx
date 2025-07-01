@@ -5,9 +5,9 @@ const Hero = () => {
   return (
     <section className="bg-cream-50 pt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-          {/* Content - 60% width */}
-          <div className="lg:col-span-3 space-y-6 lg:space-y-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content - Left side */}
+          <div className="space-y-6 lg:space-y-8">
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 leading-tight">
                 Accelerate Your Revenue Growth with RevFlyer.
@@ -40,13 +40,28 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Visual Element - 40% width */}
-          <div className="lg:col-span-2 relative">
-            <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm">
-              <div className="space-y-6">
-                {/* Simple geometric illustration placeholder */}
-                <div className="w-full h-48 md:h-64 lg:h-80 bg-gradient-to-br from-accent-200 via-secondary-200 to-secondary-300 rounded-lg flex items-center justify-center">
-                  <div className="w-16 h-16 bg-accent-500 rounded-full"></div>
+          {/* Hero Image - Right side */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="w-full max-w-lg lg:max-w-none">
+              <img 
+                src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/hero_paperplances.svg" 
+                alt="Paper planes illustration representing revenue growth and business acceleration"
+                className="w-full h-auto object-contain"
+                style={{ maxHeight: '500px' }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              {/* Fallback if image fails to load */}
+              <div 
+                className="w-full h-80 bg-gradient-to-br from-accent-200 via-secondary-200 to-secondary-300 rounded-lg flex items-center justify-center text-charcoal-500 text-center p-8"
+                style={{display: 'none'}}
+              >
+                <div>
+                  <div className="text-lg font-medium mb-2">Hero Illustration</div>
+                  <div className="text-sm">Paper planes representing growth</div>
+                  <div className="text-xs mt-2 text-red-500">Image failed to load from GitHub</div>
                 </div>
               </div>
             </div>
