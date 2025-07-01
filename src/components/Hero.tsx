@@ -13,7 +13,7 @@ const Hero = () => {
                 Accelerate Your Revenue Growth with RevFlyer.
               </h1>
               
-              <p className="text-xl md:text-2xl text-charcoal-600 leading-relaxed max-w-2xl">
+              <p className="text-xl md:text-2xl text-charcoal-600 leading-relaxed max-w-2xl font-serif">
                 Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
               </p>
             </div>
@@ -23,7 +23,7 @@ const Hero = () => {
               <Button 
                 size="lg"
                 variant="filled"
-                className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base"
+                className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-sm"
                 data-cal-link="revflyer/discovery-call"
                 data-cal-namespace="discovery-call"
                 data-cal-config='{"layout":"month_view"}'
