@@ -36,7 +36,7 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900">
+          <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 font-serif">
             Frequently Asked Questions
           </AnimatedElement>
         </div>
@@ -54,7 +54,8 @@ const FAQ = () => {
                 color: 'var(--charcoal-900)',
                 fontSize: '1.125rem',
                 fontWeight: 500,
-                lineHeight: 1.5
+                lineHeight: 1.5,
+                fontFamily: 'Adamina, serif'
               },
               item: { 
                 border: 0,
