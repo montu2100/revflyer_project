@@ -63,7 +63,7 @@ const Header = () => {
           <div className="flex items-center">
             <div className="flex items-center">
               <img 
-                src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/logo_green_banner_whitebackground_300x100.svg" 
+                src="https://raw.githubusercontent.com/montu2100/revflyer_project/refs/heads/main/assets/logo_green_transparent_banner_300x100.svg" 
                 alt="RevFlyer" 
                 className="h-14 w-auto" 
               />
