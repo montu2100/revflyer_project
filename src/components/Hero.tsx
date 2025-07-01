@@ -25,7 +25,7 @@ const Hero = () => {
                 variant="filled"
                 className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base"
               >
-                Get a consultation - it's free
+                Book a discovery call, today! 
               </Button>
             </div>
 
