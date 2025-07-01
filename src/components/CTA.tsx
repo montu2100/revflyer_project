@@ -121,6 +121,9 @@ const CTA = () => {
                     size="lg"
                     variant="filled"
                     className="bg-primary-900 hover:bg-primary-800 text-white px-8 py-4 rounded-md transition-all duration-200 text-base md:text-lg"
+                    data-cal-link="revflyer/discovery-call"
+                    data-cal-namespace="discovery-call"
+                    data-cal-config='{"layout":"month_view"}'
                   >
                     Talk To An Expert
                   </Button>

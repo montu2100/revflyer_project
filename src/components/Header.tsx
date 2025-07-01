@@ -109,6 +109,9 @@ const Header = () => {
             <Button 
               variant="filled" 
               className="bg-primary-900 hover:bg-primary-800 text-white text-sm px-6 py-2 rounded-md transition-all duration-200"
+              data-cal-link="revflyer/discovery-call"
+              data-cal-namespace="discovery-call"
+              data-cal-config='{"layout":"month_view"}'
             >
               Book a free consultation
             </Button>
@@ -162,6 +165,9 @@ const Header = () => {
               <Button 
                 variant="filled" 
                 className="bg-primary-900 hover:bg-primary-800 text-white text-sm w-full mt-4"
+                data-cal-link="revflyer/discovery-call"
+                data-cal-namespace="discovery-call"
+                data-cal-config='{"layout":"month_view"}'
               >
                 Book a free consultation
               </Button>
