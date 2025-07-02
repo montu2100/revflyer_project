@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 
 const Hero = () => {
   return (
-    <section className="bg-cream-50 pt-20">
+    <section className="pt-20" style={{ backgroundColor: '#F2F1E7' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content - Left side */}

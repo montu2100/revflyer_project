@@ -48,7 +48,7 @@ const Services = () => {
   return (
     <>
       {/* Services Introduction Section */}
-      <section className="min-h-[60vh] flex items-center bg-secondary-50 py-20 md:py-24 lg:py-28">
+      <section className="min-h-[60vh] flex items-center py-20 md:py-24 lg:py-28" style={{ backgroundColor: '#F2F1E7' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8 lg:space-y-10">
             <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 max-w-3xl mx-auto leading-tight">
@@ -63,7 +63,7 @@ const Services = () => {
       </section>
 
       {/* Service Cards Section */}
-      <section id="services" className="py-20 md:py-24 lg:py-28 bg-secondary-50">
+      <section id="services" className="py-20 md:py-24 lg:py-28" style={{ backgroundColor: '#F2F1E7' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
