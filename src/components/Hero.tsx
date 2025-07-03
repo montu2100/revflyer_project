@@ -35,7 +35,7 @@ const Hero = () => {
             {/* Trust Indicator */}
             <div className="pt-4">
               <p className="text-sm text-charcoal-400 leading-relaxed max-w-md">
-                Contact us to learn how RevFlyer can help your organization streamline and enhance operations. Our team will be in touch within 24 hours.
+                Contact us to learn how RevFlyer can help your organization streamline and enhance your revenue operations.
               </p>
             </div>
           </div>
