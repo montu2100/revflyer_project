@@ -10,11 +10,11 @@ const Hero = () => {
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-6">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 leading-tight">
-                Accelerate Your Revenue Growth with RevFlyer.
+                Elevate Your Revenue Operations with RevFlyer.
               </h1>
               
               <p className="text-xl md:text-2xl text-charcoal-600 leading-relaxed max-w-2xl font-serif">
-                Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
+                We build intelligent systems that eliminate manual tasks while your team focuses on strategic growth. No more disconnected tools, data silos, or time-consuming processes. Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
               </p>
             </div>
 
