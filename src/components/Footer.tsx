@@ -20,7 +20,7 @@ const Footer = () => {
               RevFlyer is the end-to-end partnership solution for revenue operations and growth. We help B2B companies streamline their revenue operations through expert consulting and implementation.
             </p>
             <p className="text-secondary-200 text-sm leading-relaxed">
-              Whether it's the complex, flexible RevOps consultancy you need, or the simple, streamlined approach you want, RevFlyer has the expertise to help you succeed. We provide comprehensive revenue operations and growth consulting services.
+              Whether it's the complex, flexible RevOps consultancy you need, or the simple, streamlined approach you want, RevFlyer has the expertise to help you succeed. We provide first-class revenue operations and growth consulting services.
             </p>
           </div>
 
