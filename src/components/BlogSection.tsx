@@ -8,25 +8,16 @@ const BlogSection: React.FC = () => {
   const { posts, loading, error } = useBlogPosts(3);
   const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
 
-  // Debug logging
-  console.log('BlogSection Debug:', {
-    posts: posts,
-    postsLength: posts.length,
-    loading: loading,
-    error: error,
-    supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
-    supabaseKeyExists: !!import.meta.env.VITE_SUPABASE_ANON_KEY
-  });
-
-  // Fallback content if Supabase is not configured or there's an error
+  // Fallback content for when Supabase is not available or has issues
   const fallbackPosts = [
     {
-      id: '1',
+      id: 'fallback-1',
       title: 'Optimizing Your Sales Funnel for Maximum Revenue',
       slug: 'optimizing-sales-funnel-maximum-revenue',
       excerpt: 'Learn how to identify bottlenecks in your sales process and implement data-driven strategies to accelerate revenue growth.',
       content: '',
       author_name: 'RevFlyer Team',
+      author_email: null,
       status: 'published' as const,
       published_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
       created_at: new Date().toISOString(),
@@ -36,12 +27,13 @@ const BlogSection: React.FC = () => {
       featured_image_url: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg'
     },
     {
-      id: '2',
+      id: 'fallback-2',
       title: 'The Complete Guide to CRM Implementation',
       slug: 'complete-guide-crm-implementation',
       excerpt: 'Step-by-step strategies for successful CRM deployment, data migration, and team adoption to maximize your investment.',
       content: '',
       author_name: 'RevFlyer Team',
+      author_email: null,
       status: 'published' as const,
       published_at: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
       created_at: new Date().toISOString(),
@@ -51,12 +43,13 @@ const BlogSection: React.FC = () => {
       featured_image_url: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg'
     },
     {
-      id: '3',
+      id: 'fallback-3',
       title: 'Building a Data-Driven Revenue Operations Team',
       slug: 'building-data-driven-revenue-operations-team',
       excerpt: 'Essential frameworks and tools for creating a high-performing RevOps team that drives predictable revenue growth.',
       content: '',
       author_name: 'RevFlyer Team',
+      author_email: null,
       status: 'published' as const,
       published_at: new Date(Date.now() - 21 * 24 * 60 * 60 * 1000).toISOString(),
       created_at: new Date().toISOString(),
@@ -67,7 +60,7 @@ const BlogSection: React.FC = () => {
     }
   ];
 
-  // Always show fallback posts if there's an error or no posts from Supabase
+  // Use fallback posts if there's an error or no posts from Supabase
   const displayPosts = (error || posts.length === 0) ? fallbackPosts : posts;
 
   return (
@@ -88,19 +81,6 @@ const BlogSection: React.FC = () => {
           </AnimatedElement>
         </div>
 
-        {/* Debug Information - Remove this in production */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="mb-8 p-4 bg-yellow-100 border border-yellow-300 rounded-lg text-sm">
-            <h4 className="font-bold mb-2">Debug Info:</h4>
-            <p>Loading: {loading ? 'Yes' : 'No'}</p>
-            <p>Error: {error || 'None'}</p>
-            <p>Posts from Supabase: {posts.length}</p>
-            <p>Displaying: {displayPosts.length} posts</p>
-            <p>Supabase URL configured: {import.meta.env.VITE_SUPABASE_URL ? 'Yes' : 'No'}</p>
-            <p>Supabase Key configured: {import.meta.env.VITE_SUPABASE_ANON_KEY ? 'Yes' : 'No'}</p>
-          </div>
-        )}
-
         {/* Loading State */}
         {loading && (
           <div className="text-center py-12">
@@ -109,15 +89,19 @@ const BlogSection: React.FC = () => {
           </div>
         )}
 
-        {/* Error State with Fallback Content */}
-        {error && (
+        {/* Error State Notice (only in development) */}
+        {error && process.env.NODE_ENV === 'development' && (
           <div className="text-center py-4 mb-8">
-            <p className="text-charcoal-500 text-sm">
-              {import.meta.env.VITE_SUPABASE_URL ? 
-                'Unable to load from Supabase. Showing sample content.' : 
-                'Supabase not configured. Showing sample content.'
-              }
-            </p>
+            <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 text-sm">
+              <p className="text-yellow-800 font-medium mb-2">Development Notice:</p>
+              <p className="text-yellow-700">
+                {import.meta.env.VITE_SUPABASE_URL ? 
+                  'Unable to load from Supabase. Showing sample content.' : 
+                  'Supabase not configured. Showing sample content.'
+                }
+              </p>
+              <p className="text-yellow-600 mt-2">Error: {error}</p>
+            </div>
           </div>
         )}
 
@@ -139,7 +123,7 @@ const BlogSection: React.FC = () => {
           </div>
         )}
 
-        {/* No posts message */}
+        {/* No posts message (should rarely show due to fallback) */}
         {!loading && displayPosts.length === 0 && (
           <div className="text-center py-12">
             <p className="text-charcoal-600">No articles available at the moment.</p>

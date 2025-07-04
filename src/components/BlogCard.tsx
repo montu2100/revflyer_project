@@ -9,11 +9,16 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ post, className = '' }) => {
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+    try {
+      return new Date(dateString).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      console.error('Error formatting date:', error);
+      return 'Date unavailable';
+    }
   };
 
   const handleCardClick = () => {
@@ -35,12 +40,18 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, className = '' }) => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             onError={(e) => {
               // Fallback to gradient if image fails to load
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              const target = e.currentTarget;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) {
+                fallback.classList.remove('hidden');
+              }
             }}
           />
         ) : null}
-        <div className={`w-full h-full bg-gradient-to-br from-accent-200 to-accent-300 ${post.featured_image_url ? 'hidden' : ''}`}></div>
+        <div className={`w-full h-full bg-gradient-to-br from-accent-200 to-accent-300 flex items-center justify-center ${post.featured_image_url ? 'hidden' : ''}`}>
+          <span className="text-accent-700 text-sm font-medium">Featured Image</span>
+        </div>
       </div>
 
       {/* Content */}
@@ -67,9 +78,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, className = '' }) => {
         </h3>
 
         {/* Excerpt */}
-        <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
-          {post.excerpt}
-        </p>
+        {post.excerpt && (
+          <p className="text-charcoal-600 text-sm md:text-base leading-relaxed mb-6 flex-grow">
+            {post.excerpt}
+          </p>
+        )}
 
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (

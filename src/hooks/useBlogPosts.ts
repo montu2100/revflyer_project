@@ -17,11 +17,12 @@ export const useBlogPosts = (limit?: number) => {
           : await blogQueries.getPublishedPosts();
         
         setPosts(data);
+        console.log('Successfully fetched posts:', data);
       } catch (err) {
         console.error('Error fetching blog posts:', err);
-        setError('Failed to load blog posts');
-        // Set fallback data if Supabase is not configured
-        setPosts([]);
+        const errorMessage = err instanceof Error ? err.message : 'Failed to load blog posts';
+        setError(errorMessage);
+        setPosts([]); // Ensure posts is empty array on error
       } finally {
         setLoading(false);
       }
@@ -30,7 +31,7 @@ export const useBlogPosts = (limit?: number) => {
     fetchPosts();
   }, [limit]);
 
-  return { posts, loading, error, refetch: () => fetchPosts() };
+  return { posts, loading, error };
 };
 
 export const useBlogPost = (slug: string) => {
@@ -50,7 +51,8 @@ export const useBlogPost = (slug: string) => {
         setPost(data);
       } catch (err) {
         console.error('Error fetching blog post:', err);
-        setError('Failed to load blog post');
+        const errorMessage = err instanceof Error ? err.message : 'Failed to load blog post';
+        setError(errorMessage);
         setPost(null);
       } finally {
         setLoading(false);
