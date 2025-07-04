@@ -52,9 +52,26 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 8px; /* Add 8px padding to the text container area */
+}
+
+.title {
+  line-height: 1.2;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 0; /* Add 6px padding on top and bottom of title */
 }
 
 .description {
   flex: 1;
-  margin-bottom: 16px;
+  padding: 12px 0; /* Add 12px padding to excerpt text */
+  margin-bottom: 0; /* Remove margin since we're using padding */
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 8px; /* Reduce top padding since content has bottom padding */
+  padding-bottom: 8px; /* Add 8px padding at bottom of card */
+  border-top: 1px solid #e9ecef;
 }
