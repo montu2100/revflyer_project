@@ -2,11 +2,9 @@ import React from 'react';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import { ArticleCard } from './ArticleCard';
 import AnimatedElement from './AnimatedElement';
-import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const BlogSection: React.FC = () => {
   const { posts, loading, error } = useBlogPosts(3);
-  const { containerRef, isVisible, animationsEnabled } = useStaggeredAnimation(3, 100);
 
   // Fallback content for when Supabase is not available or has issues
   const fallbackPosts = [
@@ -105,18 +103,11 @@ const BlogSection: React.FC = () => {
           </div>
         )}
 
-        {/* Blog Posts Grid */}
+        {/* Blog Posts Grid - Always visible when not loading */}
         {!loading && displayPosts.length > 0 && (
-          <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {displayPosts.map((post, index) => (
-              <div
-                key={post.id}
-                style={{
-                  opacity: animationsEnabled && !isVisible ? 0 : 1,
-                  transform: animationsEnabled && !isVisible ? 'translateY(20px)' : 'translateY(0)',
-                  transition: `opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 100}ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) ${index * 100}ms`
-                }}
-              >
+              <div key={post.id} className="opacity-100">
                 <ArticleCard post={post} />
               </div>
             ))}
