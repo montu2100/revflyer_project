@@ -106,26 +106,22 @@ export const useStaggeredAnimation = (
   const containerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
   useEffect(() => {
+    // Check for reduced motion preference and mobile device
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 768;
+    
+    if (prefersReducedMotion || isMobile) {
+      setAnimationsEnabled(false);
+      setIsVisible(true);
+      setHasAnimated(true);
+      return;
+    }
+
     const container = containerRef.current;
     if (!container) return;
-
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      setHasAnimated(true);
-      return;
-    }
-
-    // Check if mobile device
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      setIsVisible(true);
-      setHasAnimated(true);
-      return;
-    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -147,5 +143,5 @@ export const useStaggeredAnimation = (
     return () => observer.disconnect();
   }, [config.threshold, config.rootMargin, hasAnimated]);
 
-  return { containerRef, isVisible, hasAnimated };
+  return { containerRef, isVisible, hasAnimated, animationsEnabled };
 };
