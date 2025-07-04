@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -92,6 +93,23 @@ const Footer = () => {
                 <a href="mailto:hello@revflyer.com" className="text-white hover:text-accent-400 transition-colors text-sm">
                   hello@revflyer.com
                 </a>
+                
+                {/* LinkedIn Icon */}
+                <div className="pt-2">
+                  <a 
+                    href="https://www.linkedin.com/company/revflyerdotcom/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-8 h-8 bg-secondary-600 hover:bg-secondary-500 rounded-md transition-colors duration-200 group"
+                    aria-label="Follow RevFlyer on LinkedIn"
+                  >
+                    <Linkedin 
+                      size={16} 
+                      className="text-white group-hover:text-white" 
+                      strokeWidth={1.5}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
