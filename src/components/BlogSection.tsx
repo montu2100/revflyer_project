@@ -8,6 +8,16 @@ const BlogSection: React.FC = () => {
   const { posts, loading, error } = useBlogPosts(3);
   const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
 
+  // Debug logging
+  console.log('BlogSection Debug:', {
+    posts: posts,
+    postsLength: posts.length,
+    loading: loading,
+    error: error,
+    supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+    supabaseKeyExists: !!import.meta.env.VITE_SUPABASE_ANON_KEY
+  });
+
   // Fallback content if Supabase is not configured or there's an error
   const fallbackPosts = [
     {
@@ -57,7 +67,8 @@ const BlogSection: React.FC = () => {
     }
   ];
 
-  const displayPosts = error || posts.length === 0 ? fallbackPosts : posts;
+  // Always show fallback posts if there's an error or no posts from Supabase
+  const displayPosts = (error || posts.length === 0) ? fallbackPosts : posts;
 
   return (
     <section id="insights" className="py-20 md:py-24 lg:py-28 bg-secondary-50">
@@ -77,6 +88,19 @@ const BlogSection: React.FC = () => {
           </AnimatedElement>
         </div>
 
+        {/* Debug Information - Remove this in production */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mb-8 p-4 bg-yellow-100 border border-yellow-300 rounded-lg text-sm">
+            <h4 className="font-bold mb-2">Debug Info:</h4>
+            <p>Loading: {loading ? 'Yes' : 'No'}</p>
+            <p>Error: {error || 'None'}</p>
+            <p>Posts from Supabase: {posts.length}</p>
+            <p>Displaying: {displayPosts.length} posts</p>
+            <p>Supabase URL configured: {import.meta.env.VITE_SUPABASE_URL ? 'Yes' : 'No'}</p>
+            <p>Supabase Key configured: {import.meta.env.VITE_SUPABASE_ANON_KEY ? 'Yes' : 'No'}</p>
+          </div>
+        )}
+
         {/* Loading State */}
         {loading && (
           <div className="text-center py-12">
@@ -89,13 +113,16 @@ const BlogSection: React.FC = () => {
         {error && (
           <div className="text-center py-4 mb-8">
             <p className="text-charcoal-500 text-sm">
-              Showing sample content. Connect to Supabase to load dynamic blog posts.
+              {import.meta.env.VITE_SUPABASE_URL ? 
+                'Unable to load from Supabase. Showing sample content.' : 
+                'Supabase not configured. Showing sample content.'
+              }
             </p>
           </div>
         )}
 
         {/* Blog Posts Grid */}
-        {!loading && (
+        {!loading && displayPosts.length > 0 && (
           <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10">
             {displayPosts.map((post, index) => (
               <div
@@ -109,6 +136,13 @@ const BlogSection: React.FC = () => {
                 <BlogCard post={post} />
               </div>
             ))}
+          </div>
+        )}
+
+        {/* No posts message */}
+        {!loading && displayPosts.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-charcoal-600">No articles available at the moment.</p>
           </div>
         )}
 

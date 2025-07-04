@@ -3,11 +3,19 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.');
-}
+// More graceful handling of missing environment variables
+let supabase: any = null;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+if (supabaseUrl && supabaseAnonKey) {
+  try {
+    supabase = createClient(supabaseUrl, supabaseAnonKey);
+    console.log('Supabase client initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize Supabase client:', error);
+  }
+} else {
+  console.warn('Supabase environment variables not configured. Using fallback content.');
+}
 
 // Database types
 export interface BlogPost {
@@ -31,6 +39,10 @@ export interface BlogPost {
 export const blogQueries = {
   // Get all published posts
   async getPublishedPosts(): Promise<BlogPost[]> {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -43,11 +55,16 @@ export const blogQueries = {
       throw error;
     }
 
+    console.log('Fetched published posts:', data);
     return data || [];
   },
 
   // Get a single post by slug
   async getPostBySlug(slug: string): Promise<BlogPost | null> {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -70,6 +87,10 @@ export const blogQueries = {
 
   // Get recent posts (for homepage)
   async getRecentPosts(limit: number = 3): Promise<BlogPost[]> {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -83,11 +104,16 @@ export const blogQueries = {
       throw error;
     }
 
+    console.log('Fetched recent posts:', data);
     return data || [];
   },
 
   // Get posts by tag
   async getPostsByTag(tag: string): Promise<BlogPost[]> {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -106,6 +132,10 @@ export const blogQueries = {
 
   // Search posts
   async searchPosts(query: string): Promise<BlogPost[]> {
+    if (!supabase) {
+      throw new Error('Supabase not configured');
+    }
+
     const { data, error } = await supabase
       .from('posts')
       .select('*')
@@ -122,3 +152,5 @@ export const blogQueries = {
     return data || [];
   }
 };
+
+export { supabase };
