@@ -58,17 +58,6 @@ export function ArticleCard({ post, className = '' }: ArticleCardProps) {
         />
       </Card.Section>
 
-      {/* Badge for read time */}
-      {post.read_time_minutes && (
-        <Badge 
-          className={classes.rating} 
-          variant="gradient" 
-          gradient={{ from: 'teal', to: 'blue' }}
-        >
-          {post.read_time_minutes} min read
-        </Badge>
-      )}
-
       <div className={classes.content}>
         <Text className={classes.title} fw={500} component="div">
           {post.title}
