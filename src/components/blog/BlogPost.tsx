@@ -35,7 +35,6 @@ import BlogContent from './BlogContent';
 import TableOfContents from './TableOfContents';
 import SocialShare from './SocialShare';
 import RelatedArticles from './RelatedArticles';
-import CommentSection from './CommentSection';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
@@ -274,9 +273,6 @@ const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
 
             {/* Related Articles */}
             <RelatedArticles currentPost={post} />
-
-            {/* Comments Section */}
-            <CommentSection postId={post.id} />
           </div>
 
           {/* Sidebar */}
