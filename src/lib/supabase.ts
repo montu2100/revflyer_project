@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { BlogPost as BlogPostType } from '../types/blog';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -22,22 +23,7 @@ if (supabaseUrl && supabaseAnonKey) {
 }
 
 // Database types
-export interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt?: string;
-  content: string;
-  featured_image_url?: string;
-  author_name: string;
-  author_email?: string;
-  status: 'draft' | 'published' | 'archived';
-  published_at?: string;
-  created_at: string;
-  updated_at: string;
-  tags: string[];
-  read_time_minutes?: number;
-}
+export type BlogPost = BlogPostType;
 
 // Blog post queries
 export const blogQueries = {

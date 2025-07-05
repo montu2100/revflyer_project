@@ -22,8 +22,8 @@ export function ArticleCard({ post, className = '' }: ArticleCardProps) {
   const theme = useMantineTheme();
 
   const handleCardClick = () => {
-    // For now, we'll just scroll to top. In a real app, you'd navigate to the post detail page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Navigate to the blog post page
+    window.location.href = `/blog/${post.slug}`;
   };
 
   const formatDate = (dateString: string) => {

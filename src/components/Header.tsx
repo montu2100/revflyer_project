@@ -96,11 +96,22 @@ const Header = () => {
               href="#insights" 
               onClick={(e) => {
                 e.preventDefault();
-                handleSmoothScroll('insights');
+                // Check if we're on the main page or blog page
+                if (window.location.pathname === '/') {
+                  handleSmoothScroll('insights');
+                } else {
+                  window.location.href = '/#insights';
+                }
               }}
               className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
             >
               Insights
+            </a>
+            <a 
+              href="/blog" 
+              className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
+            >
+              Blog
             </a>
           </nav>
 
@@ -156,11 +167,21 @@ const Header = () => {
                 href="#insights" 
                 onClick={(e) => {
                   e.preventDefault();
-                  handleSmoothScroll('insights');
+                  if (window.location.pathname === '/') {
+                    handleSmoothScroll('insights');
+                  } else {
+                    window.location.href = '/#insights';
+                  }
                 }}
                 className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
               >
                 Insights
+              </a>
+              <a 
+                href="/blog" 
+                className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
+              >
+                Blog
               </a>
               <Button 
                 variant="filled" 
