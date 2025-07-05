@@ -19,7 +19,6 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ post, className = '' }: ArticleCardProps) {
-  const theme = useMantineTheme();
 
   const handleCardClick = () => {
     // Navigate to the blog post page
@@ -101,17 +100,6 @@ export function ArticleCard({ post, className = '' }: ArticleCardProps) {
             </div>
           </Center>
 
-          <Group gap={8} mr={0}>
-            <ActionIcon className={classes.action} variant="subtle">
-              <IconHeart size={16} color={theme.colors.red[6]} />
-            </ActionIcon>
-            <ActionIcon className={classes.action} variant="subtle">
-              <IconBookmark size={16} color={theme.colors.yellow[7]} />
-            </ActionIcon>
-            <ActionIcon className={classes.action} variant="subtle">
-              <IconShare size={16} color={theme.colors.blue[6]} />
-            </ActionIcon>
-          </Group>
         </Group>
       </div>
     </Card>

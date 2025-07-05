@@ -20,27 +20,20 @@ import {
   Skeleton
 } from '@mantine/core';
 import {
-  IconHeart,
-  IconBookmark,
-  IconShare,
   IconArrowUp,
   IconCalendar,
   IconClock,
-  IconUser,
-  IconEye
+  IconUser
 } from '@tabler/icons-react';
 import { useBlogPost } from '../../hooks/useBlogPosts';
 import { BlogPageProps, TableOfContentsItem } from '../../types/blog';
 import BlogContent from './BlogContent';
 import TableOfContents from './TableOfContents';
-import SocialShare from './SocialShare';
 import RelatedArticles from './RelatedArticles';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
   const { post, loading, error } = useBlogPost(slug);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [tocItems, setTocItems] = useState<TableOfContentsItem[]>([]);
   const { scrollProgress, scrollToTop } = useScrollProgress();
 
@@ -65,15 +58,6 @@ const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
     });
   };
 
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-    // TODO: Implement like functionality with backend
-  };
-
-  const handleBookmark = () => {
-    setIsBookmarked(!isBookmarked);
-    // TODO: Implement bookmark functionality with backend
-  };
 
   if (loading) {
     return (
@@ -192,27 +176,6 @@ const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
                       </Group>
                     )}
                   </Group>
-
-                  {/* Action Buttons */}
-                  <Group gap="xs">
-                    <ActionIcon
-                      variant={isLiked ? 'filled' : 'subtle'}
-                      color="red"
-                      onClick={handleLike}
-                      size="lg"
-                    >
-                      <IconHeart size={18} />
-                    </ActionIcon>
-                    <ActionIcon
-                      variant={isBookmarked ? 'filled' : 'subtle'}
-                      color="yellow"
-                      onClick={handleBookmark}
-                      size="lg"
-                    >
-                      <IconBookmark size={18} />
-                    </ActionIcon>
-                    <SocialShare post={post} />
-                  </Group>
                 </Group>
 
                 {/* Featured Image */}
@@ -249,24 +212,6 @@ const BlogPost: React.FC<BlogPageProps> = ({ slug }) => {
                       Updated on {formatDate(post.updated_at)}
                     </Text>
                   )}
-                </Group>
-
-                <Group gap="xs">
-                  <ActionIcon
-                    variant={isLiked ? 'filled' : 'subtle'}
-                    color="red"
-                    onClick={handleLike}
-                  >
-                    <IconHeart size={16} />
-                  </ActionIcon>
-                  <ActionIcon
-                    variant={isBookmarked ? 'filled' : 'subtle'}
-                    color="yellow"
-                    onClick={handleBookmark}
-                  >
-                    <IconBookmark size={16} />
-                  </ActionIcon>
-                  <SocialShare post={post} />
                 </Group>
               </Group>
             </Paper>
