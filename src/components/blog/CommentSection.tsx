@@ -12,7 +12,7 @@ import {
   ActionIcon,
   Box
 } from '@mantine/core';
-import { IconHeart, IconReply, IconThumbUp } from '@tabler/icons-react';
+import { IconHeart, IconMessageReply, IconThumbUp } from '@tabler/icons-react';
 
 interface Comment {
   id: string;
@@ -142,7 +142,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ postId }) => {
                     {comment.likes}
                   </Text>
                   <ActionIcon variant="subtle" size="sm">
-                    <IconReply size={14} />
+                    <IconMessageReply size={14} />
                   </ActionIcon>
                   <Text size="xs" c="dimmed">
                     Reply
