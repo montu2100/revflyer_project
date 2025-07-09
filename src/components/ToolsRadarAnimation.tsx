@@ -388,13 +388,13 @@ const ToolsRadarAnimation: React.FC = () => {
             </svg>
           </div>
           <div className="logo logo-8">
-            <div className="text-xs font-bold">HubSpot</div>
+            <div className="text-xs font-medium">HubSpot</div>
           </div>
           <div className="logo logo-9">
-            <div className="text-xs font-bold">Zapier</div>
+            <div className="text-xs font-medium">Zapier</div>
           </div>
           <div className="logo logo-10">
-            <div className="text-xs font-bold">Make</div>
+            <div className="text-xs font-medium">Make</div>
           </div>
         </div>
       </div>
