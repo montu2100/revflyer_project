@@ -47,9 +47,9 @@ const Services = () => {
       title: 'AI-ENABLED REVENUE AUTOMATION',
       description: 'Transform Your Revenue Operations with Intelligent Automation',
       features: [
-        'Lead Handling – AI-powered routing and qualification',
-        'Proposal Generation – Automated, data-driven sales proposals',
-        'Forecasting & Pipeline Analysis – AI-driven insights for revenue predictability'
+        'AI Lead Handling',
+        'Automated Proposal Generation',
+        'AI Forecasting & Pipeline Analysis'
       ]
     }
   ];
