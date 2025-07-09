@@ -112,12 +112,8 @@ const Services = () => {
                     </p>
                   </div>
 
-                  {/* What's Included Section */}
+                  {/* Features List */}
                   <div className="flex-grow">
-                    <h4 className="text-xs font-bold text-charcoal-900 tracking-wide mb-6">
-                      <span className="uppercase font-bold">What's Included</span>
-                    </h4>
-                    
                     <div className="space-y-4">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start space-x-3">
@@ -136,6 +132,25 @@ const Services = () => {
                 </div>
               </div>
             ))}
+            
+            {/* Read More Card */}
+            <div
+              className="flex"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+                transition: `opacity 600ms cubic-bezier(0.33, 1, 0.68, 1) ${services.length * 100}ms, transform 600ms cubic-bezier(0.33, 1, 0.68, 1) ${services.length * 100}ms`
+              }}
+            >
+              <a 
+                href="/services" 
+                className="bg-white rounded-lg border border-charcoal-200 p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full text-center justify-center items-center group"
+              >
+                <div className="text-xl md:text-2xl font-normal text-charcoal-900 group-hover:text-primary-900 transition-colors duration-200">
+                  Read more
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
