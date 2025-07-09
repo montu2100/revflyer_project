@@ -8,39 +8,48 @@ const Services = () => {
 
   const services = [
     {
-      title: 'TACTICAL SUPPORT',
+      title: 'REVENUE OPERATIONS',
+      description: 'Fractional RevOps',
+      features: [
+        'Hands-on Advisory & Strategy',
+        'Revenue Planning & Forecasting',
+        'Cross-Functional Alignment'
+      ]
+    },
+    {
+      title: 'Tactical Support',
       description: 'Hands-On RevOps Execution to Drive Operational Excellence',
       features: [
-        'Conduct comprehensive tech stack audits and optimize existing tools',
-        'Design and implement scalable revenue processes',
-        'Establish robust data hygiene practices and governance frameworks'
+        'Tech Stack Audit & Optimisation',
+        'Process Design & Implementation',
+        'Data Hygiene & Governance'
       ]
     },
     {
-      title: 'REVENUE ENABLEMENT',
+      title: 'Revenue Enablement',
       description: 'Equip Your Revenue Teams for Consistent Success',
       features: [
-        'Create customized sales playbooks and standardized processes',
-        'Develop targeted enablement programs for revenue teams',
-        'Drive successful technology adoption and utilization'
+        'Sales Playbooks & Processes',
+        'Enablement Programmes',
+        'Technology Adoption'
       ]
     },
     {
-      title: 'GTM STRATEGY',
+      title: 'GTM Strategy',
       description: 'Unify Your Go-To-Market Motion for Scalable Growth',
       features: [
-        'Build strategic roadmaps aligned with business objectives',
-        'Facilitate cross-functional team alignment and collaboration',
-        'Define and track key performance metrics and success indicators'
+        'Strategic Roadmaps',
+        'Cross-Team Alignment',
+        'Performance Metrics'
       ]
     },
     {
       title: 'AI-ENABLED REVENUE AUTOMATION',
       description: 'Transform Your Revenue Operations with Intelligent Automation',
       features: [
-        'Implement AI-powered lead routing and qualification systems',
-        'Generate automated, data-driven sales proposals',
-        'Leverage AI insights for accurate forecasting and pipeline analysis'
+        'Lead Handling – AI-powered routing and qualification',
+        'Proposal Generation – Automated, data-driven sales proposals',
+        'Forecasting & Pipeline Analysis – AI-driven insights for revenue predictability'
       ]
     }
   ];
@@ -81,7 +90,7 @@ const Services = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 items-stretch">
+          <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 items-stretch">
             {services.map((service, index) => (
               <div
                 key={service.title}
