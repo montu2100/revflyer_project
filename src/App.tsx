@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Services from './pages/Services';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
+import ServicesSection from './components/Services';
 import SecondarySection from './components/SecondarySection';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
@@ -19,6 +20,9 @@ function App() {
           <Route path="/blog" element={<BlogRouter />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           
+          {/* Services page */}
+          <Route path="/services" element={<Services />} />
+          
           {/* Main website */}
           <Route path="/" element={<MainWebsite />} />
         </Routes>
@@ -32,7 +36,7 @@ const MainWebsite: React.FC = () => (
     <Header />
     <main>
       <Hero />
-      <Services />
+      <ServicesSection />
       <SecondarySection />
       <FAQ />
       <CTA />

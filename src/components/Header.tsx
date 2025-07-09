@@ -89,6 +89,8 @@ const Header = () => {
                 handleSmoothScroll('services');
               }}
               className="text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
+              href="/services" 
+              className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
             >
               Services
             </a>
@@ -148,16 +150,6 @@ const Header = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   handleSmoothScroll('about');
-                }}
-                className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
-              >
-                About
-              </a>
-              <a 
-                href="#services" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSmoothScroll('services');
                 }}
                 className="block text-charcoal-600 hover:text-charcoal-900 transition-colors duration-200 text-sm cursor-pointer"
               >
