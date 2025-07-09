@@ -43,11 +43,6 @@ export const useScrollAnimation = (config: AnimationConfig = {}): UseScrollAnima
 
     // Check if mobile device (disable animations on mobile for performance)
     const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      setIsVisible(true);
-      setHasAnimated(true);
-      return;
-    }
 
     // Set initial state
     element.style.opacity = '0';
@@ -111,9 +106,8 @@ export const useStaggeredAnimation = (
   useEffect(() => {
     // Check for reduced motion preference and mobile device
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobile = window.innerWidth <= 768;
     
-    if (prefersReducedMotion || isMobile) {
+    if (prefersReducedMotion) {
       setAnimationsEnabled(false);
       setIsVisible(true);
       setHasAnimated(true);
