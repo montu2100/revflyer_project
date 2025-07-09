@@ -6,8 +6,8 @@ const ToolsRadarAnimation: React.FC = () => {
       <style jsx>{`
         .radar-container {
           position: relative;
-          width: 100%;
-          height: 100%;
+          width: 500px;
+          height: 500px;
           border-radius: 50%;
           background: #ffffff;
           border: 3px solid #063D3A;
@@ -21,8 +21,8 @@ const ToolsRadarAnimation: React.FC = () => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 120px;
-          height: 120px;
+          width: 140px;
+          height: 140px;
           background: #ffffff;
           border: 2px solid #063D3A;
           border-radius: 50%;
@@ -34,8 +34,8 @@ const ToolsRadarAnimation: React.FC = () => {
         }
 
         .radar-icon {
-          width: 80px;
-          height: 80px;
+          width: 100px;
+          height: 100px;
           position: relative;
           background: #ffffff;
           border-radius: 50%;
@@ -80,27 +80,27 @@ const ToolsRadarAnimation: React.FC = () => {
         }
 
         .radar-circle-1 {
-          width: 140px;
-          height: 140px;
-          margin: -70px 0 0 -70px;
+          width: 175px;
+          height: 175px;
+          margin: -87.5px 0 0 -87.5px;
         }
 
         .radar-circle-2 {
-          width: 220px;
-          height: 220px;
-          margin: -110px 0 0 -110px;
+          width: 275px;
+          height: 275px;
+          margin: -137.5px 0 0 -137.5px;
         }
 
         .radar-circle-3 {
-          width: 300px;
-          height: 300px;
-          margin: -150px 0 0 -150px;
+          width: 375px;
+          height: 375px;
+          margin: -187.5px 0 0 -187.5px;
         }
 
         .radar-circle-4 {
-          width: 380px;
-          height: 380px;
-          margin: -190px 0 0 -190px;
+          width: 475px;
+          height: 475px;
+          margin: -237.5px 0 0 -237.5px;
         }
 
         .radar-sweep {
@@ -108,7 +108,7 @@ const ToolsRadarAnimation: React.FC = () => {
           top: 50%;
           left: 50%;
           width: 2px;
-          height: 40px;
+          height: 50px;
           background: linear-gradient(to top, #1e40af, transparent);
           transform-origin: bottom center;
           transform: translate(-50%, -100%);
@@ -133,17 +133,17 @@ const ToolsRadarAnimation: React.FC = () => {
 
         .annotation {
           position: absolute;
-          font-size: 10px;
+          font-size: 12px;
           color: #1e40af;
           font-weight: bold;
           text-transform: uppercase;
           letter-spacing: 0.5px;
         }
 
-        .annotation-n { top: 10px; left: 50%; transform: translateX(-50%); }
-        .annotation-e { right: 15px; top: 50%; transform: translateY(-50%); }
-        .annotation-s { bottom: 10px; left: 50%; transform: translateX(-50%); }
-        .annotation-w { left: 15px; top: 50%; transform: translateY(-50%); }
+        .annotation-n { top: 15px; left: 50%; transform: translateX(-50%); }
+        .annotation-e { right: 20px; top: 50%; transform: translateY(-50%); }
+        .annotation-s { bottom: 15px; left: 50%; transform: translateX(-50%); }
+        .annotation-w { left: 20px; top: 50%; transform: translateY(-50%); }
 
         .orbit {
           position: absolute;
@@ -154,17 +154,17 @@ const ToolsRadarAnimation: React.FC = () => {
         }
 
         .orbit-1 {
-          width: 280px;
-          height: 280px;
-          margin: -140px 0 0 -140px;
-          animation: rotate 25s linear infinite;
+          width: 320px;
+          height: 320px;
+          margin: -160px 0 0 -160px;
+          animation: rotate 20s linear infinite;
         }
 
         .orbit-2 {
-          width: 340px;
-          height: 340px;
-          margin: -170px 0 0 -170px;
-          animation: rotate 31.25s linear infinite reverse;
+          width: 400px;
+          height: 400px;
+          margin: -200px 0 0 -200px;
+          animation: rotate 25s linear infinite reverse;
         }
 
         @keyframes rotate {
@@ -174,8 +174,8 @@ const ToolsRadarAnimation: React.FC = () => {
 
         .logo {
           position: absolute;
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
           border-radius: 8px;
           display: flex;
           align-items: center;
@@ -187,34 +187,36 @@ const ToolsRadarAnimation: React.FC = () => {
           border: 2px solid #0f766e;
           box-shadow: 0 2px 6px rgba(6, 61, 58, 0.2);
           transition: transform 0.3s ease;
-          padding: 5px;
+          padding: 6px;
         }
 
         .logo svg {
           width: 100%;
           height: auto;
-          max-width: 40px;
-          max-height: 25px;
+          max-width: 48px;
+          max-height: 30px;
         }
 
         .logo:hover {
-          transform: scale(1.2);
+          transform: scale(1.1);
           z-index: 5;
           border-color: #063D3A;
           box-shadow: 0 4px 12px rgba(6, 61, 58, 0.3);
         }
 
-        .logo-1 { top: -25px; left: calc(50% - 25px); }
-        .logo-2 { top: calc(13% - 25px); right: calc(13% - 25px); }
-        .logo-3 { top: calc(50% - 25px); right: -25px; }
-        .logo-4 { bottom: calc(13% - 25px); right: calc(13% - 25px); }
-        .logo-5 { bottom: -25px; left: calc(50% - 25px); }
-        .logo-6 { top: calc(50% - 25px); left: -25px; }
+        /* Position logos on orbit 1 - 6 logos */
+        .logo-1 { top: -30px; left: calc(50% - 30px); }
+        .logo-2 { top: calc(13% - 30px); right: calc(13% - 30px); }
+        .logo-3 { top: calc(50% - 30px); right: -30px; }
+        .logo-4 { bottom: calc(13% - 30px); right: calc(13% - 30px); }
+        .logo-5 { bottom: -30px; left: calc(50% - 30px); }
+        .logo-6 { top: calc(50% - 30px); left: -30px; }
 
-        .logo-7 { top: calc(15% - 25px); left: calc(50% - 25px); }
-        .logo-8 { top: calc(50% - 25px); right: calc(15% - 25px); }
-        .logo-9 { bottom: calc(15% - 25px); left: calc(50% - 25px); }
-        .logo-10 { top: calc(50% - 25px); left: calc(15% - 25px); }
+        /* Position logos on orbit 2 - 4 logos */
+        .logo-7 { top: calc(15% - 30px); left: calc(50% - 30px); }
+        .logo-8 { top: calc(50% - 30px); right: calc(15% - 30px); }
+        .logo-9 { bottom: calc(15% - 30px); left: calc(50% - 30px); }
+        .logo-10 { top: calc(50% - 30px); left: calc(15% - 30px); }
 
         .orbit-1 .logo { 
           animation: none;
