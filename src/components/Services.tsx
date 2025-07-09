@@ -4,43 +4,43 @@ import AnimatedElement from './AnimatedElement';
 import { useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const Services = () => {
-  const { containerRef, isVisible } = useStaggeredAnimation(3, 100);
+  const { containerRef, isVisible } = useStaggeredAnimation(4, 100);
 
   const services = [
     {
-      title: 'Revenue Enablement',
-      description: 'Comprehensive revenue operations strategy and sales enablement solutions to accelerate your growth.',
+      title: 'TACTICAL SUPPORT',
+      description: 'Hands-On RevOps Execution to Drive Operational Excellence',
       features: [
-        'Revenue forecasting & sales enablement',
-        'Pipeline management & lead qualification',
-        'Territory transformation & optimization',
-        'Sales process optimization',
-        'Performance analytics & reporting',
-        'Sales team training & onboarding'
+        'Conduct comprehensive tech stack audits and optimize existing tools',
+        'Design and implement scalable revenue processes',
+        'Establish robust data hygiene practices and governance frameworks'
       ]
     },
     {
-      title: 'CRM Services',
-      description: 'Expert CRM implementation and optimization to streamline your customer relationship management.',
+      title: 'REVENUE ENABLEMENT',
+      description: 'Equip Your Revenue Teams for Consistent Success',
       features: [
-        'Salesforce, HubSpot & Pipedrive setup',
-        'Data migration & cleanup',
-        'Custom field configuration',
-        'Workflow automation via Zapier & Make',
-        'Integration with existing tools',
-        'User training & adoption support'
+        'Create customized sales playbooks and standardized processes',
+        'Develop targeted enablement programs for revenue teams',
+        'Drive successful technology adoption and utilization'
       ]
     },
     {
-      title: 'Technical Services',
-      description: 'Advanced technical solutions and custom integrations to power your revenue operations.',
+      title: 'GTM STRATEGY',
+      description: 'Unify Your Go-To-Market Motion for Scalable Growth',
       features: [
-        'API development & custom integrations',
-        'Database management & optimization',
-        'Advanced lead scoring models',
-        'Predictive analytics & insights',
-        'Technical consulting & architecture',
-        'Data-driven decision frameworks'
+        'Build strategic roadmaps aligned with business objectives',
+        'Facilitate cross-functional team alignment and collaboration',
+        'Define and track key performance metrics and success indicators'
+      ]
+    },
+    {
+      title: 'AI-ENABLED REVENUE AUTOMATION',
+      description: 'Transform Your Revenue Operations with Intelligent Automation',
+      features: [
+        'Implement AI-powered lead routing and qualification systems',
+        'Generate automated, data-driven sales proposals',
+        'Leverage AI insights for accurate forecasting and pipeline analysis'
       ]
     }
   ];
@@ -81,7 +81,7 @@ const Services = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div ref={containerRef} className="grid md:grid-cols-3 gap-8 md:gap-10 items-stretch">
+          <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 items-stretch">
             {services.map((service, index) => (
               <div
                 key={service.title}
