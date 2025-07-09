@@ -8,8 +8,8 @@ const Services = () => {
 
   const services = [
     {
-      title: 'REVENUE OPERATIONS',
-      description: 'Fractional RevOps',
+      title: 'Fractional RevOps',
+      description: 'Executive-Level Revenue Operations Leadership Without Full-Time Overhead',
       features: [
         'Hands-on Advisory & Strategy',
         'Revenue Planning & Forecasting',
@@ -44,7 +44,7 @@ const Services = () => {
       ]
     },
     {
-      title: 'AI-ENABLED REVENUE AUTOMATION',
+      title: 'AI-Enabled Revenue Automation',
       description: 'Transform Your Revenue Operations with Intelligent Automation',
       features: [
         'AI Lead Handling',
@@ -90,7 +90,7 @@ const Services = () => {
           </div>
 
           {/* Service Cards Grid */}
-          <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-6 items-stretch">
+          <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch">
             {services.map((service, index) => (
               <div
                 key={service.title}
