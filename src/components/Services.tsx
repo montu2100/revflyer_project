@@ -102,7 +102,6 @@ const Services = () => {
                 }}
               >
                 <div className="bg-white rounded-lg border border-charcoal-200 p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-white rounded-lg border border-charcoal-200 p-8 flex flex-col aspect-square overflow-y-auto hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   {/* Service Header */}
                   <div className="mb-8">
                     <h3 className="text-xl md:text-2xl font-normal text-charcoal-900 mb-4">
