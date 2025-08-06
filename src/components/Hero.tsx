@@ -15,7 +15,6 @@ const Hero = () => {
               
               <p className="text-xl md:text-2xl text-charcoal-600 leading-relaxed max-w-xl font-serif">
                  Everything you need to elevate your revenue operations, whether you're enterprise-level or just taking off.
-                We build intelligent systems that eliminate manual tasks while your team focuses on strategic growth.
               </p>
             </div>
 
