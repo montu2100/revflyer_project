@@ -31,7 +31,7 @@ const Services = () => {
       features: [
         'Sales Playbooks & Processes',
         'Enablement Programmes',
-        'Technology Adoption'
+        'Enablement Tools'
       ]
     },
     {
