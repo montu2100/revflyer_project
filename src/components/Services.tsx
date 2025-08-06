@@ -11,9 +11,9 @@ const Services = () => {
       title: 'Fractional RevOps',
       description: 'Executive-Level Revenue Operations Leadership Without Full-Time Overhead',
       features: [
-        'Hands-on Advisory & Strategy',
-        'Revenue Planning & Forecasting',
-        'Cross-Functional Alignment'
+        'Strategic Expertise and Guidance',
+        'Process Optimisation',
+        'Flexible Engagemenet'
       ]
     },
     {
