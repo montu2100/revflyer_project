@@ -126,7 +126,7 @@ const Header = () => {
               data-cal-namespace="discovery-call"
               data-cal-config='{"layout":"month_view"}'
             >
-              Book a free consultation
+              Book a consultation
             </Button>
           </div>
 
