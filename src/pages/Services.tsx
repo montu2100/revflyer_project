@@ -3,18 +3,16 @@ import {
   Container, 
   Title, 
   Text, 
-  Grid, 
+  SimpleGrid, 
   Card, 
   List, 
-  ThemeIcon, 
   Badge, 
   Button, 
   Stack, 
   Group,
-  Divider,
   Box,
   Paper,
-  SimpleGrid
+  ThemeIcon
 } from '@mantine/core';
 import { 
   IconCheck, 
@@ -26,465 +24,362 @@ import {
   IconArrowRight,
   IconChartBar,
   IconSettings,
-  IconBulb
+  IconBulb,
+  IconCog,
+  IconHeadset,
+  IconZap
 } from '@tabler/icons-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import AnimatedElement from '../components/AnimatedElement';
 
 const Services: React.FC = () => {
-  const services = [
+  const peasFramework = [
     {
-      id: 'fractional-revops',
-      title: 'Fractional RevOps',
-      icon: IconTrendingUp,
-      description: 'Strategic revenue operations leadership without the full-time commitment. Perfect for growing companies that need expert guidance.',
-      features: [
-        'Strategic RevOps planning and execution',
-        'Cross-functional team alignment',
-        'Process optimization and standardization',
-        'Technology stack evaluation and recommendations',
-        'Performance metrics and KPI development',
-        'Scalable systems implementation'
-      ],
-      benefits: [
-        'Access to senior-level expertise',
-        'Cost-effective alternative to full-time hire',
-        'Flexible engagement model',
-        'Immediate impact on revenue operations'
-      ],
-      idealFor: 'Series A-C companies, 50-500 employees, $5M-$50M ARR',
+      title: 'Process',
+      icon: IconCog,
+      description: "We'll design workflows that actually get your teams working together, not against each other",
       color: 'teal'
     },
     {
-      id: 'tactical-support',
-      title: 'Tactical Support',
-      icon: IconSettings,
-      description: 'Hands-on implementation support for specific RevOps initiatives. Get expert help when you need it most.',
-      features: [
-        'CRM configuration and optimization',
-        'Sales process documentation',
-        'Lead routing and qualification setup',
-        'Reporting and dashboard creation',
-        'Data cleanup and migration',
-        'Integration implementation'
-      ],
-      benefits: [
-        'Quick turnaround on specific projects',
-        'Expert implementation guidance',
-        'Knowledge transfer to your team',
-        'Reduced time to value'
-      ],
-      idealFor: 'Companies with existing RevOps teams needing specialized support',
+      title: 'Enablement',
+      icon: IconUsers,
+      description: "Your teams get the tools, training, and playbooks they need to close more deals",
       color: 'blue'
     },
     {
-      id: 'revenue-enablement',
-      title: 'Revenue Enablement',
-      icon: IconUsers,
-      description: 'Comprehensive sales and marketing enablement to accelerate revenue growth and improve team performance.',
-      features: [
-        'Sales playbook development',
-        'Training program design and delivery',
-        'Content creation and management',
-        'Onboarding process optimization',
-        'Performance coaching frameworks',
-        'Competitive intelligence systems'
-      ],
-      benefits: [
-        'Faster sales rep ramp time',
-        'Improved win rates and deal velocity',
-        'Consistent messaging across teams',
-        'Enhanced sales productivity'
-      ],
-      idealFor: 'Sales teams of 10+ reps, high-growth companies',
-      color: 'orange'
-    },
-    {
-      id: 'gtm-strategy',
-      title: 'GTM Strategy',
-      icon: IconTarget,
-      description: 'End-to-end go-to-market strategy development for new products, markets, or business model changes.',
-      features: [
-        'Market analysis and segmentation',
-        'Ideal customer profile development',
-        'Pricing and packaging strategy',
-        'Channel strategy and partner enablement',
-        'Launch planning and execution',
-        'Success metrics and tracking'
-      ],
-      benefits: [
-        'Reduced time to market',
-        'Higher launch success rates',
-        'Clear go-to-market roadmap',
-        'Aligned cross-functional execution'
-      ],
-      idealFor: 'Product launches, market expansion, new business lines',
+      title: 'Advisory',
+      icon: IconChartBar,
+      description: "We analyse your data to give you insights that drive real decisions, not just pretty reports",
       color: 'grape'
     },
     {
-      id: 'ai-automation',
-      title: 'AI-Enabled Revenue Automation',
-      icon: IconBrain,
-      description: 'Leverage artificial intelligence and automation to scale your revenue operations and improve efficiency.',
-      features: [
-        'AI-powered lead scoring and routing',
-        'Automated workflow design',
-        'Predictive analytics implementation',
-        'Chatbot and conversational AI setup',
-        'Revenue forecasting models',
-        'Process automation optimization'
-      ],
-      benefits: [
-        'Increased operational efficiency',
-        'Better lead qualification accuracy',
-        'Reduced manual work',
-        'Improved forecasting precision'
-      ],
-      idealFor: 'Tech-forward companies, high-volume sales processes',
-      color: 'violet'
+      title: 'Systems',
+      icon: IconSettings,
+      description: "We'll audit and optimise your tech stack so everything talks to each other properly",
+      color: 'orange'
     }
   ];
 
-  const processSteps = [
+  const benefits = [
+    "One unified way of working across people, data and process",
+    "Complete visibility and collaboration across teams – no more blind spots",
+    "Improved operational efficiencies through better alignment and enablement"
+  ];
+
+  const services = [
     {
-      step: '01',
-      title: 'Discovery & Assessment',
-      description: 'We start with a comprehensive analysis of your current revenue operations, identifying gaps and opportunities.'
+      badge: 'Implementation',
+      title: 'HubSpot Implementation & Migration',
+      subtitle: 'Get HubSpot Working For Your Business, Not Against It',
+      description: "Most HubSpot implementations are overcomplicated messes. We'll set yours up properly from the start. Our certified experts work with you through every step - scoping, implementation, training, and testing - to ensure your investment actually pays off.",
+      services: [
+        "HubSpot Configuration & Setup – We'll configure everything to match how your revenue operations and business actually works",
+        "Data Migration & Integration – Clean transfer and mapping of your existing data without the usual headaches",
+        "Training & Adoption – Hands-on training that gets your team master and actually using the platform"
+      ],
+      cta: 'Book HubSpot Consulting',
+      icon: IconRocket,
+      badgeColor: 'teal'
     },
     {
-      step: '02',
-      title: 'Strategy Development',
-      description: 'Based on our findings, we develop a customized strategy aligned with your business goals and growth objectives.'
+      badge: 'Advisory',
+      title: 'Fractional RevOps Advisory',
+      subtitle: 'Expert-Level RevOps Leadership Without Internal Overhead',
+      description: "Need senior RevOps strategy but can't justify the hire? Get strategic RevOps leadership that stays three steps ahead of your business needs without the overhead. Our fractional RevOps experts embed as your strategic advisors to set direction, measure performance, and guide your revenue transformation.",
+      services: [
+        "Expert Advisory & Strategy – C-level RevOps insights and strategic direction tied to measurable revenue outcomes",
+        "RevOps Roadmap & Planning – Strategic roadmaps that define the right priorities that match where you business is today",
+        "Ongoing guidance to keep initiatives on track and adjust strategy based on real performance data"
+      ],
+      cta: 'Book Fractional RevOps Consulting',
+      icon: IconTrendingUp,
+      badgeColor: 'blue'
     },
     {
-      step: '03',
-      title: 'Implementation',
-      description: 'Our team works alongside yours to implement solutions, ensuring knowledge transfer and sustainable adoption.'
+      badge: 'Support',
+      title: 'Tactical Support',
+      subtitle: 'Technical RevOps Execution to Drive Operational Excellence',
+      description: "Stop wasting your strategic talent on CRM admin and system maintenance. We handle the technical heavy lifting and day-to-day operations, freeing your team to focus on strategy and growth initiatives that actually move revenue.",
+      services: [
+        "Admin Support & Maintenance – CRM management, user support, and technical troubleshooting",
+        "Technical Implementation & Integration – Hands-on setup, configuration, and optimization of your RevOps tech stack",
+        "Data Operations & Reporting – Automated data cleanup, dashboard creation, and operational reporting infrastructure"
+      ],
+      cta: 'Book Tactical RevOps Support',
+      icon: IconHeadset,
+      badgeColor: 'orange'
     },
     {
-      step: '04',
-      title: 'Optimization & Scale',
-      description: 'We continuously monitor performance and optimize processes to ensure maximum ROI and scalable growth.'
+      badge: 'Enablement',
+      title: 'Revenue Enablement',
+      subtitle: 'Transform Team Performance Across Your Revenue Organisation',
+      description: "Great strategy means nothing if teams can't execute consistently. We develop the people, processes, and capabilities needed to turn your revenue strategy into predictable performance across sales, marketing, and customer success.",
+      services: [
+        "Sales Playbooks & Process Standardisation – Proven methodologies, deal progression frameworks, and playbooks that actually get used by your teams",
+        "Skills Training & Performance Development – Role-specific training and programs that drives real improvements in win rates and team performance",
+        "Technology Training & Adoption – Training and adoption programs that ensure your tech investments pay off instead of gathering digital dust"
+      ],
+      cta: 'Book Revenue Enablement Services',
+      icon: IconTarget,
+      badgeColor: 'grape'
+    },
+    {
+      badge: 'Automation',
+      title: 'AI-Powered Automation',
+      subtitle: 'Let AI Handle the Repetitive Stuff While Your Team Focuses on Closing',
+      description: "Manual lead routing, proposal writing, and forecasting are killing your team's productivity. We'll implement AI workflows that handle the routine tasks automatically, so your people can spend time on what humans do best - building relationships and closing deals.",
+      services: [
+        "Lead Handling & Qualification – Smart routing and AI-powered qualification that gets the right leads to the right person at the right time",
+        "Proposal Generation & Content – Automated, data-driven proposals and sales content tailored to prospects without the manual grind",
+        "Forecasting & Pipeline Intelligence – AI insights that actually help you predict revenue and spot risks before they become problems"
+      ],
+      cta: 'Book AI-Powered Automation',
+      icon: IconBrain,
+      badgeColor: 'violet'
     }
   ];
 
   return (
     <>
-      {/* SEO Meta Tags */}
-      <title>Revenue Operations Services | RevFlyer - Expert RevOps Consulting</title>
-      <meta 
-        name="description" 
-        content="Comprehensive revenue operations services including Fractional RevOps, GTM Strategy, Revenue Enablement, and AI-powered automation. Transform your revenue operations with RevFlyer's expert consulting services." 
-      />
-      <meta 
-        name="keywords" 
-        content="revenue operations services, fractional revops, GTM strategy, revenue enablement, sales operations, marketing automation, RevFlyer services" 
-      />
-
       <Header />
       
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
-        <section className="bg-cream-50 py-20 md:py-24 lg:py-28">
+        <Box
+          style={{
+            background: 'linear-gradient(135deg, #0f766e 0%, #1e40af 100%)',
+            color: 'white',
+            paddingTop: '4rem',
+            paddingBottom: '4rem'
+          }}
+        >
           <Container size="lg">
-            <div className="text-center mb-16">
+            <Stack align="center" gap="xl" style={{ textAlign: 'center' }}>
               <AnimatedElement>
-                <Badge 
-                  size="lg" 
-                  variant="light" 
-                  color="teal" 
-                  className="mb-6"
-                >
-                  Our Services
-                </Badge>
+                <Title order={1} size="3rem" fw={700} style={{ lineHeight: 1.2 }}>
+                  What is RevOps
+                </Title>
               </AnimatedElement>
               
               <AnimatedElement delay={100}>
-                <Title 
-                  order={1} 
-                  className="text-3xl md:text-4xl lg:text-5xl font-normal text-charcoal-900 mb-6 font-serif"
-                >
-                  Revenue Operations Services
-                </Title>
+                <Text size="xl" fw={500} maw={800} style={{ lineHeight: 1.6 }}>
+                  Revenue teams are stuck in silos, and it's costing you growth. At RevFlyer, we don't just identify the problem - we fix it.
+                </Text>
               </AnimatedElement>
               
               <AnimatedElement delay={200}>
-                <Text 
-                  size="xl" 
-                  className="text-charcoal-600 max-w-3xl mx-auto leading-relaxed"
-                >
-                  From strategic fractional leadership to hands-on tactical support, 
-                  we provide comprehensive revenue operations services tailored to your 
-                  business needs and growth stage.
+                <Text size="lg" maw={900} style={{ lineHeight: 1.6, opacity: 0.9 }}>
+                  We transform fragmented revenue operations into unified growth engines using our proven PEAS framework: Process, Enablement, Advisory, and Systems.
                 </Text>
               </AnimatedElement>
-            </div>
-          </Container>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-20 md:py-24 lg:py-28 bg-white">
-          <Container size="lg">
-            <Stack gap="xl">
-              {services.map((service, index) => (
-                <AnimatedElement key={service.id} delay={index * 100}>
-                  <Card 
-                    shadow="sm" 
-                    padding="xl" 
-                    radius="md" 
-                    withBorder
-                    className="hover:shadow-lg transition-all duration-300"
-                  >
-                    <Grid>
-                      <Grid.Col span={{ base: 12, md: 8 }}>
-                        <Group mb="md">
-                          <ThemeIcon 
-                            size={50} 
-                            radius="md" 
-                            color={service.color}
-                            variant="light"
-                          >
-                            <service.icon size={28} />
-                          </ThemeIcon>
-                          <div>
-                            <Title order={2} className="text-charcoal-900 font-serif">
-                              {service.title}
-                            </Title>
-                            <Text size="sm" c="dimmed">
-                              {service.idealFor}
-                            </Text>
-                          </div>
-                        </Group>
-
-                        <Text size="lg" className="text-charcoal-600 mb-lg">
-                          {service.description}
-                        </Text>
-
-                        <Title order={4} size="md" mb="sm" className="text-charcoal-900">
-                          What's Included:
-                        </Title>
-                        <List
-                          spacing="xs"
-                          size="sm"
-                          icon={
-                            <ThemeIcon color={service.color} size={20} radius="xl">
-                              <IconCheck size={12} />
-                            </ThemeIcon>
-                          }
-                        >
-                          {service.features.map((feature, idx) => (
-                            <List.Item key={idx}>{feature}</List.Item>
-                          ))}
-                        </List>
-                      </Grid.Col>
-
-                      <Grid.Col span={{ base: 12, md: 4 }}>
-                        <Paper p="md" bg="gray.0" radius="md">
-                          <Title order={5} size="sm" mb="sm" className="text-charcoal-900">
-                            Key Benefits:
-                          </Title>
-                          <List size="sm" spacing="xs">
-                            {service.benefits.map((benefit, idx) => (
-                              <List.Item key={idx} icon="•">
-                                {benefit}
-                              </List.Item>
-                            ))}
-                          </List>
-                          
-                          <Button 
-                            fullWidth 
-                            mt="md"
-                            color={service.color}
-                            rightSection={<IconArrowRight size={16} />}
-                            data-cal-link="revflyer/discovery-call"
-                            data-cal-namespace="discovery-call"
-                            data-cal-config='{"layout":"month_view"}'
-                          >
-                            Learn More
-                          </Button>
-                        </Paper>
-                      </Grid.Col>
-                    </Grid>
-                  </Card>
-                </AnimatedElement>
-              ))}
             </Stack>
           </Container>
-        </section>
+        </Box>
 
-        {/* Process Section */}
-        <section className="py-20 md:py-24 lg:py-28 bg-secondary-50">
-          <Container size="lg">
-            <div className="text-center mb-16">
-              <AnimatedElement>
-                <Title 
-                  order={2} 
-                  className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-6 font-serif"
-                >
-                  Our Proven Process
-                </Title>
-              </AnimatedElement>
-              
-              <AnimatedElement delay={100}>
-                <Text 
-                  size="lg" 
-                  className="text-charcoal-600 max-w-2xl mx-auto"
-                >
-                  We follow a structured approach to ensure successful outcomes 
-                  and sustainable growth for your revenue operations.
-                </Text>
-              </AnimatedElement>
-            </div>
+        {/* PEAS Framework Section */}
+        <Container size="lg" py="4rem">
+          <Stack gap="3rem">
+            <AnimatedElement>
+              <Title order={2} ta="center" size="2.5rem" fw={600} c="dark">
+                The PEAS Framework
+              </Title>
+            </AnimatedElement>
 
-            <SimpleGrid cols={{ base: 1, md: 2, lg: 4 }} spacing="lg">
-              {processSteps.map((step, index) => (
-                <AnimatedElement key={step.step} delay={index * 100}>
-                  <Card 
-                    shadow="sm" 
-                    padding="lg" 
-                    radius="md" 
-                    className="text-center h-full"
-                    bg="white"
-                  >
-                    <ThemeIcon 
-                      size={60} 
-                      radius="xl" 
-                      color="teal" 
-                      variant="light"
-                      className="mx-auto mb-md"
-                    >
-                      <Text size="xl" fw={700} c="teal">
-                        {step.step}
-                      </Text>
-                    </ThemeIcon>
-                    
-                    <Title order={4} size="md" mb="sm" className="text-charcoal-900">
-                      {step.title}
-                    </Title>
-                    
-                    <Text size="sm" className="text-charcoal-600">
-                      {step.description}
+            <SimpleGrid cols={{ base: 1, md: 2 }} spacing="xl">
+              {peasFramework.map((item, index) => (
+                <AnimatedElement key={item.title} delay={index * 100}>
+                  <Card shadow="md" radius="md" padding="xl" h="100%">
+                    <Group mb="md">
+                      <ThemeIcon size={50} radius="md" color={item.color} variant="light">
+                        <item.icon size={28} />
+                      </ThemeIcon>
+                      <Title order={3} size="1.5rem" fw={600}>
+                        {item.title}
+                      </Title>
+                    </Group>
+                    <Text size="md" c="dimmed" style={{ lineHeight: 1.6 }}>
+                      {item.description}
                     </Text>
                   </Card>
                 </AnimatedElement>
               ))}
             </SimpleGrid>
-          </Container>
-        </section>
 
-        {/* Stats Section */}
-        <section className="py-20 md:py-24 lg:py-28 bg-white">
-          <Container size="lg">
-            <div className="text-center mb-16">
-              <AnimatedElement>
-                <Title 
-                  order={2} 
-                  className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 mb-6 font-serif"
+            {/* Benefits Section */}
+            <AnimatedElement delay={400}>
+              <Paper shadow="sm" radius="md" p="xl" bg="gray.0">
+                <Title order={3} size="1.25rem" fw={600} mb="md" ta="center">
+                  What You Get
+                </Title>
+                <List
+                  spacing="sm"
+                  size="md"
+                  center
+                  icon={
+                    <ThemeIcon color="teal" size={20} radius="xl">
+                      <IconCheck size={12} />
+                    </ThemeIcon>
+                  }
                 >
-                  Proven Results
+                  {benefits.map((benefit, index) => (
+                    <List.Item key={index}>{benefit}</List.Item>
+                  ))}
+                </List>
+              </Paper>
+            </AnimatedElement>
+          </Stack>
+        </Container>
+
+        {/* Services Grid */}
+        <Box bg="gray.1" py="4rem">
+          <Container size="lg">
+            <Stack gap="3rem">
+              <AnimatedElement>
+                <Title order={2} ta="center" size="2.5rem" fw={600} c="dark" mb="lg">
+                  Our Services
                 </Title>
               </AnimatedElement>
-            </div>
 
-            <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl">
-              <AnimatedElement>
-                <div className="text-center">
-                  <Text size="3rem" fw={700} c="teal" className="font-serif">
-                    25%
-                  </Text>
-                  <Text size="lg" fw={500} className="text-charcoal-900">
-                    Average Revenue Growth
-                  </Text>
-                  <Text size="sm" c="dimmed">
-                    Within 6 months of engagement
-                  </Text>
-                </div>
-              </AnimatedElement>
+              <SimpleGrid cols={{ base: 1, md: 2, lg: 3 }} spacing="xl">
+                {services.map((service, index) => (
+                  <AnimatedElement key={service.title} delay={index * 100}>
+                    <Card 
+                      shadow="md" 
+                      radius="md" 
+                      padding="xl" 
+                      h="100%"
+                      style={{ 
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '';
+                      }}
+                    >
+                      <Stack gap="md" style={{ flex: 1 }}>
+                        <Group justify="space-between" align="flex-start">
+                          <Badge 
+                            size="lg" 
+                            variant="light" 
+                            color={service.badgeColor}
+                          >
+                            {service.badge}
+                          </Badge>
+                          <ThemeIcon 
+                            size={40} 
+                            radius="md" 
+                            color={service.badgeColor} 
+                            variant="light"
+                          >
+                            <service.icon size={24} />
+                          </ThemeIcon>
+                        </Group>
 
-              <AnimatedElement delay={100}>
-                <div className="text-center">
-                  <Text size="3rem" fw={700} c="teal" className="font-serif">
-                    40%
-                  </Text>
-                  <Text size="lg" fw={500} className="text-charcoal-900">
-                    Faster Sales Cycles
-                  </Text>
-                  <Text size="sm" c="dimmed">
-                    Through process optimization
-                  </Text>
-                </div>
-              </AnimatedElement>
+                        <Stack gap="xs">
+                          <Title order={3} size="lg" fw={500} lh={1.3}>
+                            {service.title}
+                          </Title>
+                          <Text size="md" fw={500} c="teal" lh={1.4}>
+                            {service.subtitle}
+                          </Text>
+                        </Stack>
 
-              <AnimatedElement delay={200}>
-                <div className="text-center">
-                  <Text size="3rem" fw={700} c="teal" className="font-serif">
-                    60%
-                  </Text>
-                  <Text size="lg" fw={500} className="text-charcoal-900">
-                    Reduction in Manual Tasks
-                  </Text>
-                  <Text size="sm" c="dimmed">
-                    Via automation implementation
-                  </Text>
-                </div>
-              </AnimatedElement>
-            </SimpleGrid>
+                        <Text size="sm" c="dimmed" lh={1.5} style={{ flex: 1 }}>
+                          {service.description}
+                        </Text>
+
+                        <Stack gap="xs">
+                          <Text size="sm" fw={500} c="dark">
+                            What's Included:
+                          </Text>
+                          <List
+                            spacing="xs"
+                            size="sm"
+                            icon={
+                              <ThemeIcon color={service.badgeColor} size={16} radius="xl">
+                                <IconCheck size={10} />
+                              </ThemeIcon>
+                            }
+                          >
+                            {service.services.map((item, idx) => (
+                              <List.Item key={idx} style={{ lineHeight: 1.4 }}>
+                                {item}
+                              </List.Item>
+                            ))}
+                          </List>
+                        </Stack>
+
+                        <Button 
+                          variant="light" 
+                          color={service.badgeColor}
+                          rightSection={<IconArrowRight size={16} />}
+                          mt="auto"
+                          data-cal-link="revflyer/discovery-call"
+                          data-cal-namespace="discovery-call"
+                          data-cal-config='{"layout":"month_view"}'
+                        >
+                          {service.cta}
+                        </Button>
+                      </Stack>
+                    </Card>
+                  </AnimatedElement>
+                ))}
+              </SimpleGrid>
+            </Stack>
           </Container>
-        </section>
+        </Box>
 
-        {/* CTA Section */}
-        <section className="py-20 md:py-24 lg:py-28 bg-primary-900">
+        {/* Final CTA Section */}
+        <Box
+          style={{
+            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            color: 'white',
+            paddingTop: '4rem',
+            paddingBottom: '4rem'
+          }}
+        >
           <Container size="lg">
-            <div className="text-center">
+            <Stack align="center" gap="xl" style={{ textAlign: 'center' }}>
               <AnimatedElement>
-                <Title 
-                  order={2} 
-                  className="text-2xl md:text-3xl lg:text-4xl font-normal text-white mb-6 font-serif"
-                >
+                <Title order={2} size="2.5rem" fw={600}>
                   Ready to Transform Your Revenue Operations?
                 </Title>
               </AnimatedElement>
               
               <AnimatedElement delay={100}>
-                <Text 
-                  size="lg" 
-                  className="text-secondary-200 max-w-2xl mx-auto mb-8"
-                >
-                  Let's discuss how our services can accelerate your revenue growth 
-                  and optimize your operations for sustainable success.
+                <Text size="lg" maw={600} style={{ lineHeight: 1.6, opacity: 0.9 }}>
+                  Let's discuss how our proven PEAS framework can accelerate your growth
                 </Text>
               </AnimatedElement>
               
               <AnimatedElement delay={200}>
-                <Group justify="center" gap="md">
-                  <Button 
-                    size="lg"
-                    variant="white"
-                    color="dark"
-                    rightSection={<IconRocket size={20} />}
-                    data-cal-link="revflyer/discovery-call"
-                    data-cal-namespace="discovery-call"
-                    data-cal-config='{"layout":"month_view"}'
-                  >
-                    Schedule Discovery Call
-                  </Button>
-                  
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    color="white"
-                    rightSection={<IconChartBar size={20} />}
-                    component="a"
-                    href="mailto:hello@revflyer.com"
-                  >
-                    Request Proposal
-                  </Button>
-                </Group>
+                <Button 
+                  size="lg"
+                  variant="filled"
+                  color="teal"
+                  rightSection={<IconRocket size={20} />}
+                  data-cal-link="revflyer/discovery-call"
+                  data-cal-namespace="discovery-call"
+                  data-cal-config='{"layout":"month_view"}'
+                  style={{
+                    fontSize: '1.1rem',
+                    padding: '0.75rem 2rem',
+                    height: 'auto'
+                  }}
+                >
+                  Schedule Consultation
+                </Button>
               </AnimatedElement>
-            </div>
+            </Stack>
           </Container>
-        </section>
+        </Box>
       </main>
 
       <Footer />
