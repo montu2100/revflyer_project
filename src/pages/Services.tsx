@@ -37,7 +37,7 @@ const Services: React.FC = () => {
   const peasFramework = [
     {
       title: 'Process',
-      icon: IconCog,
+      icon: IconSettings,
       description: "We'll design workflows that actually get your teams working together, not against each other",
       color: 'teal'
     },
