@@ -76,22 +76,22 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 lg:py-28 bg-cream-50">
+    <section className="py-16 md:py-20 lg:py-24 bg-cream-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900 font-serif">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <AnimatedElement as="h2" className="text-2xl md:text-3xl lg:text-4xl font-normal text-charcoal-900" style={{ fontFamily: 'Adamina, Georgia, "Times New Roman", serif' }}>
             Frequently Asked Questions
           </AnimatedElement>
         </div>
 
         {/* FAQ Sections */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           {faqSections.map((section, sectionIndex) => (
             <AnimatedElement key={section.category} delay={sectionIndex * 100}>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* Category Header */}
-                <h3 className="text-xl font-semibold text-primary-900 mb-6">
+                <h3 className="text-lg font-semibold text-primary-900 mb-4" style={{ fontFamily: 'Adamina, Georgia, "Times New Roman", serif' }}>
                   {section.category}
                 </h3>
 
@@ -104,16 +104,16 @@ const FAQ = () => {
                   styles={{
                     label: { 
                       color: 'var(--charcoal-900)',
-                      fontSize: '1.125rem',
+                      fontSize: '1rem',
                       fontWeight: 600,
                       lineHeight: 1.5,
-                      fontFamily: 'Work Sans, sans-serif'
+                      fontFamily: 'Adamina, Georgia, "Times New Roman", serif'
                     },
                     item: { 
                       border: 0,
                       backgroundColor: 'white',
                       borderRadius: '12px',
-                      marginBottom: '16px',
+                      marginBottom: '12px',
                       boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
                       transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
                       '&[data-active]': {
@@ -121,24 +121,25 @@ const FAQ = () => {
                       }
                     },
                     control: {
-                      padding: '1.75rem',
+                      padding: '1.25rem',
                       cursor: 'pointer',
                       '&:hover': {
                         backgroundColor: 'rgb(249 250 251)'
                       }
                     },
                     content: {
-                      padding: '0 1.75rem 1.75rem 1.75rem'
+                      padding: '0 1.25rem 1.25rem 1.25rem'
                     },
                     panel: {
                       color: 'var(--charcoal-600)',
                       fontSize: '1rem',
-                      lineHeight: 1.6
+                      lineHeight: 1.6,
+                      fontFamily: '"Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                     }
                   }}
                   chevron={
-                    <div className="w-6 h-6 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center transition-transform duration-300">
-                      <Plus size={16} className="text-white" strokeWidth={2} />
+                    <div className="w-5 h-5 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center transition-transform duration-300">
+                      <Plus size={14} className="text-white" strokeWidth={2} />
                     </div>
                   }
                 >
